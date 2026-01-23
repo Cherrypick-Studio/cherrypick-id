@@ -1,0 +1,107 @@
+---
+---
+
+<button
+	id="theme-toggle"
+	type="button"
+	class="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+	aria-label="Toggle theme"
+>
+	<!-- Sun icon (light mode) -->
+	<svg
+		id="theme-icon-light"
+		class="hidden w-5 h-5"
+		fill="currentColor"
+		viewBox="0 0 20 20"
+	>
+		<path
+			d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+			fill-rule="evenodd"
+			clip-rule="evenodd"></path>
+	</svg>
+	<!-- Moon icon (dark mode) -->
+	<svg
+		id="theme-icon-dark"
+		class="hidden w-5 h-5"
+		fill="currentColor"
+		viewBox="0 0 20 20"
+	>
+		<path
+			d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+		></path>
+	</svg>
+	<!-- System icon (auto mode) -->
+	<svg
+		id="theme-icon-system"
+		class="hidden w-5 h-5"
+		fill="none"
+		stroke="currentColor"
+		viewBox="0 0 24 24"
+	>
+		<path
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="2"
+			d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+		></path>
+	</svg>
+</button>
+
+<script is:inline>
+	const themeToggleBtn = document.getElementById('theme-toggle');
+	const iconLight = document.getElementById('theme-icon-light');
+	const iconDark = document.getElementById('theme-icon-dark');
+	const iconSystem = document.getElementById('theme-icon-system');
+
+	const themes = ['system', 'light', 'dark'];
+
+	function getStoredTheme() {
+		return localStorage.getItem('theme') || 'system';
+	}
+
+	function applyTheme(theme) {
+		const isDark = theme === 'dark' || 
+			(theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+		
+		document.documentElement.classList.toggle('dark', isDark);
+	}
+
+	function updateIcon(theme) {
+		iconLight.classList.add('hidden');
+		iconDark.classList.add('hidden');
+		iconSystem.classList.add('hidden');
+
+		if (theme === 'light') {
+			iconLight.classList.remove('hidden');
+		} else if (theme === 'dark') {
+			iconDark.classList.remove('hidden');
+		} else {
+			iconSystem.classList.remove('hidden');
+		}
+	}
+
+	function init() {
+		const theme = getStoredTheme();
+		applyTheme(theme);
+		updateIcon(theme);
+	}
+
+	init();
+
+	// Listen for system preference changes when in system mode
+	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+		if (getStoredTheme() === 'system') {
+			applyTheme('system');
+		}
+	});
+
+	themeToggleBtn.addEventListener('click', () => {
+		const currentTheme = getStoredTheme();
+		const currentIndex = themes.indexOf(currentTheme);
+		const nextTheme = themes[(currentIndex + 1) % themes.length];
+		
+		localStorage.setItem('theme', nextTheme);
+		applyTheme(nextTheme);
+		updateIcon(nextTheme);
+	});
+</script>
