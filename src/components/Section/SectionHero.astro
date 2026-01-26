@@ -1,0 +1,41 @@
+---
+import heroImg from '../../assets/ic-logo-banner.svg';
+import WaveBackground from '../WaveBackground.astro';
+---
+
+<div class='w-full relative h-fit overflow-hidden'>
+	<WaveBackground />
+	<div class='max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-[110px]'>
+		<div class='flex justify-between items-center'>
+			<div class='flex flex-col gap-6'>
+				<span
+					class='text-[56px] font-semibold text-[#1A1A1A] dark:text-[#FEFEFE]'
+				>
+					Jasa Pembuatan Website Profesional <span
+						class='text-[#C42026] dark:text-[#FFCA00]'>Mudah</span
+					> & <span class='text-[#C42026] dark:text-[#FFCA00]'>Cepat</span>
+				</span>
+				<p class='text-lg text-[#666666] dark:text-[#BBBBBB]'>
+					Banyak pemilik bisnis mempunyai website, tapi tidak semuanya
+					menghasilkan. <b>Puluhan klien</b> kami mengalami <b
+						>peningkatan leads</b
+					> dan <b> income 200% </b> setelah menggunakan website yang kami bangun
+					secara profesional dan terstruktur.
+				</p>
+				<div class='flex'>
+					<div class='flex gap-6 mt-6'>
+						<button
+							class='bg-[#C42026] shadow-xl py-4 px-6 rounded-[12px] text-sm font-medium text-[#FEFEFE]'
+							>Cek Harga Kami
+						</button>
+						<button
+							class='bg-white shadow-xl py-4 px-6 rounded-[12px] text-sm font-medium text-[#1A1A1A]'
+							>Lihat Portfolio
+						</button>
+					</div>
+				</div>
+			</div>
+			<img src={heroImg.src} class='w-full' />
+		</div>
+	</div>
+</div>

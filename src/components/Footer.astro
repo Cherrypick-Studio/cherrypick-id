@@ -1,19 +1,33 @@
 ---
 import logo from '../assets/ic-logo-wording.svg';
+import logoWhite from '../assets/ic-logo-wording-white.svg';
 ---
 
-<footer class='bg-[#FFF5F6] dark:bg-gray-800 text-white py-12 transition-colors'>
-	<div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+<footer
+	class='bg-[#FFF5F6] dark:bg-[#282828] text-white py-12 transition-colors border-t border-[#666666]'
+>
+	<div class='max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8'>
 		<div class='flex flex-col justify-between gap-8'>
 			<div class='flex flex-col space-y-6'>
 				<div class='flex w-full justify-between'>
 					<h2 class='text-xl font-bold text-[#1A1A1A] dark:text-white'>
 						Jasa Pembuatan Website Profesional Mudah & Cepat
 					</h2>
-					<img src={logo.src} alt='Cherrypick' class='h-12 w-auto' />
+					<img
+						src={logo.src}
+						alt='Cherrypick'
+						class='h-12 w-auto dark:hidden'
+					/>
+					<img
+						src={logoWhite.src}
+						alt='Cherrypick'
+						class='h-12 w-auto hidden dark:block'
+					/>
 				</div>
 
-				<div class='flex flex-col sm:flex-row gap-6 text-gray-400 dark:text-gray-300'>
+				<div
+					class='flex flex-col sm:flex-row gap-6 text-gray-400 dark:text-gray-300'
+				>
 					<div class='flex items-start gap-2'>
 						<svg
 							class='w-5 h-5 mt-0.5 flex-shrink-0'

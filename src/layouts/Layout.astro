@@ -1,27 +1,32 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import SectionHero from '../components/Section/SectionHero.astro';
 ---
 
 <!doctype html>
-<html lang="id" class="scroll-smooth">
+<html lang='id' class='scroll-smooth'>
 	<head>
 		<script is:inline>
 			const theme = localStorage.getItem('theme') || 'system';
-			const isDark = theme === 'dark' || 
-				(theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+			const isDark =
+				theme === 'dark' ||
+				(theme === 'system' &&
+					window.matchMedia('(prefers-color-scheme: dark)').matches);
 			if (isDark) document.documentElement.classList.add('dark');
 		</script>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
 		<title>Cherrypick - Jasa Pembuatan Website Profesional</title>
 	</head>
-	<body class="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+	<body
+		class='min-h-screen flex flex-col bg-white dark:bg-[#282828] text-gray-900 dark:text-gray-100 transition-colors'
+	>
 		<Navbar />
-		<main class="flex-1">
-			<slot />
+		<main class='flex-1'>
+			<SectionHero />
 		</main>
 		<Footer />
 	</body>

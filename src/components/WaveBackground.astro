@@ -1,0 +1,156 @@
+---
+
+---
+
+<svg
+	class='absolute w-full wave-animation -bottom-32'
+	viewBox='0 0 1440 400'
+	fill='none'
+	xmlns='http://www.w3.org/2000/svg'
+	preserveAspectRatio='none'
+>
+	<g class='wave-paths'>
+		<path d='M-100 300 Q 200 250, 400 280 T 800 260 T 1200 290 T 1600 270'
+		></path>
+		<path d='M-100 290 Q 250 240, 450 270 T 850 250 T 1250 280 T 1600 260'
+		></path>
+		<path d='M-100 280 Q 300 230, 500 260 T 900 240 T 1300 270 T 1600 250'
+		></path>
+		<path d='M-100 270 Q 350 220, 550 250 T 950 230 T 1350 260 T 1600 240'
+		></path>
+		<path d='M-100 260 Q 400 210, 600 240 T 1000 220 T 1400 250 T 1600 230'
+		></path>
+		<path d='M-100 250 Q 450 200, 650 230 T 1050 210 T 1450 240 T 1600 220'
+		></path>
+		<path d='M-100 240 Q 500 190, 700 220 T 1100 200 T 1500 230 T 1600 210'
+		></path>
+		<path d='M-100 230 Q 550 180, 750 210 T 1150 190 T 1550 220 T 1600 200'
+		></path>
+		<path d='M-100 220 Q 600 170, 800 200 T 1200 180 T 1600 210 T 1700 190'
+		></path>
+		<path d='M-100 210 Q 650 160, 850 190 T 1250 170 T 1650 200 T 1700 180'
+		></path>
+		<path d='M-100 200 Q 700 150, 900 180 T 1300 160 T 1700 190 T 1800 170'
+		></path>
+		<path d='M-100 190 Q 750 140, 950 170 T 1350 150 T 1750 180 T 1800 160'
+		></path>
+		<path d='M-100 180 Q 800 130, 1000 160 T 1400 140 T 1800 170 T 1900 150'
+		></path>
+		<path d='M-100 170 Q 850 120, 1050 150 T 1450 130 T 1850 160 T 1900 140'
+		></path>
+		<path d='M-100 160 Q 900 110, 1100 140 T 1500 120 T 1900 150 T 2000 130'
+		></path>
+	</g>
+</svg>
+
+<style>
+	.wave-paths path {
+		stroke: #c42026;
+		stroke-width: 0.5;
+		fill: none;
+		opacity: 0.6;
+	}
+
+	:global(.dark) .wave-paths path {
+		stroke: #ffffff;
+	}
+
+	.wave-animation {
+		animation: wave-float 12s ease-in-out infinite;
+	}
+
+	.wave-paths path:nth-child(1) {
+		animation: wave-move 4s ease-in-out infinite;
+		opacity: 0.8;
+	}
+	.wave-paths path:nth-child(2) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 0.15s;
+		opacity: 0.75;
+	}
+	.wave-paths path:nth-child(3) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 0.3s;
+		opacity: 0.7;
+	}
+	.wave-paths path:nth-child(4) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 0.45s;
+		opacity: 0.65;
+	}
+	.wave-paths path:nth-child(5) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 0.6s;
+		opacity: 0.6;
+	}
+	.wave-paths path:nth-child(6) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 0.75s;
+		opacity: 0.55;
+	}
+	.wave-paths path:nth-child(7) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 0.9s;
+		opacity: 0.5;
+	}
+	.wave-paths path:nth-child(8) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 1.05s;
+		opacity: 0.45;
+	}
+	.wave-paths path:nth-child(9) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 1.2s;
+		opacity: 0.4;
+	}
+	.wave-paths path:nth-child(10) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 1.35s;
+		opacity: 0.35;
+	}
+	.wave-paths path:nth-child(11) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 1.5s;
+		opacity: 0.3;
+	}
+	.wave-paths path:nth-child(12) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 1.65s;
+		opacity: 0.25;
+	}
+	.wave-paths path:nth-child(13) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 1.8s;
+		opacity: 0.2;
+	}
+	.wave-paths path:nth-child(14) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 1.95s;
+		opacity: 0.15;
+	}
+	.wave-paths path:nth-child(15) {
+		animation: wave-move 4s ease-in-out infinite;
+		animation-delay: 2.1s;
+		opacity: 0.1;
+	}
+
+	@keyframes wave-float {
+		0%,
+		100% {
+			transform: translateX(0);
+		}
+		50% {
+			transform: translateX(30px);
+		}
+	}
+
+	@keyframes wave-move {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-8px);
+		}
+	}
+</style>
