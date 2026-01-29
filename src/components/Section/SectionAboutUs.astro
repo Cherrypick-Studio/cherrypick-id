@@ -1,0 +1,66 @@
+---
+import icBestPrice from '../../assets/ic-best-price.svg';
+import icExpertTeam from '../../assets/ic-expert-team.svg';
+import icGoodDesign from '../../assets/ic-good-design.svg';
+import icSeo from '../../assets/ic-seo.svg';
+import icCleanProses from '../../assets/ic-clean-proses.svg';
+import icFastResponse from '../../assets/ic-fast.svg';
+
+const aboutUsItems = [
+	{
+		title: 'Harga Terjangkau & Transparan',
+		desc: 'Kami menawarkan harga yang masuk akal dan transparan. Kamu tahu sejak awal apa yang didapat, tanpa drama di belakang.',
+		image: icBestPrice,
+	},
+	{
+		title: 'Tim Developer Berpengalaman',
+		desc: 'Kami tidak hanya fokus ke tampilan, tapi juga memastikan website berjalan stabil dan siap dipakai jangka panjang.',
+		image: icExpertTeam,
+	},
+	{
+		title: 'Desain Profesional & Modern',
+		desc: 'Website kami dirancang dengan tampilan yang rapi, modern, dan sesuai karakter bisnismu (bukan template asal jadi).',
+		image: icGoodDesign,
+	},
+	{
+		title: 'SEO Friendly Sejak Awal',
+		desc: 'Struktur website kami sudah disiapkan agar lebih mudah ditemukan di Google, bukan sekadar bagus secara visual saja.',
+		image: icSeo,
+	},
+	{
+		title: 'Proses Mudah & Tidak Ribet',
+		desc: 'Semua proses kami buat simpel. Mulai dari diskusi, desain, hingga website online kamu jadi dan siap pakai.',
+		image: icCleanProses,
+	},
+	{
+		title: 'Fast Response',
+		desc: 'Butuh tanya atau revisi? Langsung chat WhatsApp. Respon cepat, komunikasi jelas, tanpa harus nunggu lama.',
+		image: icFastResponse,
+	},
+];
+---
+
+<div
+	class='flex flex-col gap-[88px] max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 justify-center items-center'
+>
+	<h1
+		class='text-[40px] text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold max-w-[737px] text-center'
+	>
+		Kenapa Banyak Bisnis Mempercayakan Website-nya ke Kami?
+	</h1>
+	<div class='grid grid-cols-1 lg:grid-cols-3 gap-x-[56px] gap-y-[70px]'>
+		{
+			aboutUsItems.map((item) => (
+				<div class='w-full h-[240px] bg-[#F9F9F9] dark:bg-[#1A1A1A] shadow-xl flex flex-col gap-4 justify-end items-center p-6 relative'>
+					<img src={item.image.src} class='absolute -top-10' />
+					<span class='text-xl text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold text-center'>
+						{item.title}
+					</span>
+					<p class='text-base text-[#666666] dark:text-[#BBBBBB] text-center font-normal'>
+						{item.desc}
+					</p>
+				</div>
+			))
+		}
+	</div>
+</div>

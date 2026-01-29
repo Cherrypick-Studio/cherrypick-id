@@ -1,0 +1,56 @@
+---
+interface Props {
+	target: number;
+	duration?: number;
+	suffix?: string;
+	prefix?: string;
+	class?: string;
+}
+
+const { target, duration = 2000, suffix = '', prefix = '', class: className = '' } = Astro.props;
+---
+
+<span
+	class:list={['count-up', className]}
+	data-target={target}
+	data-duration={duration}
+	data-suffix={suffix}
+	data-prefix={prefix}
+>
+	{prefix}0{suffix}
+</span>
+
+<script>
+	function animateCountUp(element: HTMLElement) {
+		const target = parseInt(element.dataset.target || '0', 10);
+		const duration = parseInt(element.dataset.duration || '2000', 10);
+		const suffix = element.dataset.suffix || '';
+		const prefix = element.dataset.prefix || '';
+
+		const startTime = performance.now();
+
+		function update(currentTime: number) {
+			const elapsed = currentTime - startTime;
+			const progress = Math.min(elapsed / duration, 1);
+
+			// Easing function for smooth animation
+			const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+			const currentValue = Math.floor(easeOutQuart * target);
+
+			element.textContent = `${prefix}${currentValue}${suffix}`;
+
+			if (progress < 1) {
+				requestAnimationFrame(update);
+			} else {
+				element.textContent = `${prefix}${target}${suffix}`;
+			}
+		}
+
+		requestAnimationFrame(update);
+	}
+
+	// Animate all count-up elements on page load
+	document.querySelectorAll<HTMLElement>('.count-up').forEach((el) => {
+		animateCountUp(el);
+	});
+</script>
