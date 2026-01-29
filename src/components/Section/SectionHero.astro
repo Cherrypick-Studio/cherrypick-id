@@ -9,13 +9,13 @@ import CountUp from '../CountUp.astro';
 	<div class='max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-[110px]'>
 		<div class='flex justify-between items-center'>
 			<div class='flex flex-col gap-6'>
-				<span
+				<h1
 					class='text-[56px] font-semibold text-[#1A1A1A] dark:text-[#FEFEFE]'
 				>
 					Jasa Pembuatan Website Profesional <span
 						class='text-[#C42026] dark:text-[#FFCA00]'>Mudah</span
 					> & <span class='text-[#C42026] dark:text-[#FFCA00]'>Cepat</span>
-				</span>
+				</h1>
 				<p class='text-lg text-[#666666] dark:text-[#BBBBBB]'>
 					Banyak pemilik bisnis mempunyai website, tapi tidak semuanya
 					menghasilkan. <b>Puluhan klien</b> kami mengalami <b
@@ -38,8 +38,8 @@ import CountUp from '../CountUp.astro';
 						<div class='flex flex-col gap-0'>
 							<CountUp
 								target={98}
-								suffix="%"
-								class="text-2xl text-[#1A1A1A] font-semibold dark:text-[#FEFEFE]"
+								suffix='%'
+								class='text-2xl text-[#1A1A1A] font-semibold dark:text-[#FEFEFE]'
 							/>
 							<span class='text-sm text-[#666666] dark:text-[#BBBBBB]'
 								>Klien Puas</span
@@ -55,7 +55,7 @@ import CountUp from '../CountUp.astro';
 					</div>
 				</div>
 			</div>
-			<img src={heroImg.src} class='w-full' />
+			<img src={heroImg.src} class='w-full hidden lg:block' />
 		</div>
 	</div>
 </div>

@@ -33,7 +33,6 @@ const { target, duration = 2000, suffix = '', prefix = '', class: className = ''
 			const elapsed = currentTime - startTime;
 			const progress = Math.min(elapsed / duration, 1);
 
-			// Easing function for smooth animation
 			const easeOutQuart = 1 - Math.pow(1 - progress, 4);
 			const currentValue = Math.floor(easeOutQuart * target);
 
@@ -49,8 +48,23 @@ const { target, duration = 2000, suffix = '', prefix = '', class: className = ''
 		requestAnimationFrame(update);
 	}
 
-	// Animate all count-up elements on page load
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					const el = entry.target as HTMLElement;
+					if (!el.dataset.animated) {
+						el.dataset.animated = 'true';
+						animateCountUp(el);
+					}
+					observer.unobserve(el);
+				}
+			});
+		},
+		{ threshold: 0.5 }
+	);
+
 	document.querySelectorAll<HTMLElement>('.count-up').forEach((el) => {
-		animateCountUp(el);
+		observer.observe(el);
 	});
 </script>

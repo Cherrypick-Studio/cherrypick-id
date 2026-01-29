@@ -1,0 +1,57 @@
+---
+import CountUp from '../CountUp.astro';
+---
+
+<div class='bg-[#EFEFEF] dark:bg-[#0A0A0A] p-20'>
+	<div
+		class='flex flex-col gap-[64px] max-w-[1440px] mx-auto justify-center items-center'
+	>
+		<p
+			class='text-[#666666] dark:text-[#BBBBBB] text-xl text-center lg:max-w-[1000px]'
+		>
+			<span class='font-semibold text-[#1A1A1A] dark:text-[#FEFEFE]'>
+				<CountUp target={30} />+ UMKM dan brand
+			</span>
+			kami bantu mereka punya website yang rapi, dan cepat. Website yang dikerjakan
+			dengan serius akan membuat bisnis terlihat lebih meyakinkan.
+		</p>
+		<div class='grid lg:grid-cols-3 w-full gap-[100px]'>
+			<div class='flex flex-col justify-center items-center'>
+				<span
+					class='text-[56px] text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold'
+				>
+					<CountUp target={70} /><span
+						class='text-[#C42026] dark:text-[#FFCA00]'>+</span
+					>
+				</span>
+				<span class='text-[#666666] dark:text-[#BBBBBB]'>
+					Bisnis lokal telah kami bantu go digital</span
+				>
+			</div>
+			<div class='flex flex-col justify-center items-center'>
+				<span
+					class='text-[56px] text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold'
+				>
+					{'>'}<CountUp target={30} /><span
+						class='text-[#C42026] dark:text-[#FFCA00]'>+</span
+					>
+				</span>
+				<span class='text-[#666666] dark:text-[#BBBBBB]'>
+					Klien puas dengan hasil website</span
+				>
+			</div>
+			<div class='flex flex-col justify-center items-center'>
+				<span
+					class='text-[56px] text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold'
+				>
+					<CountUp target={100} /><span
+						class='text-[#C42026] dark:text-[#FFCA00]'>%</span
+					>
+				</span>
+				<span class='text-[#666666] dark:text-[#BBBBBB]'
+					>Website mobile-friendly & siap SEO</span
+				>
+			</div>
+		</div>
+	</div>
+</div>

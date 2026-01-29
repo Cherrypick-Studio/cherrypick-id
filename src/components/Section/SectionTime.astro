@@ -1,0 +1,56 @@
+---
+import icBestPrice from '../../assets/ic-consultant.svg';
+import icExpertTeam from '../../assets/ic-design.svg';
+import icGoodDesign from '../../assets/ic-finance.svg';
+
+const aboutUsItems = [
+	{
+		title: 'Konsultasi & Kesepakatan',
+		desc: 'Diskusi kebutuhan, tujuan website, target market, dan referensi desain. Dilanjutkan dengan finalisasi scope pekerjaan, harga, dan timeline pengerjaan.',
+		image: icBestPrice,
+	},
+	{
+		title: 'Design & Development',
+		desc: 'Pembuatan tampilan desain yang modern dan sesuai branding bisnis Anda. Serta, proses coding website agar responsif, cepat, dan SEO friendly.',
+		image: icExpertTeam,
+	},
+	{
+		title: 'Review & Finalisasi',
+		desc: 'Penyesuaian berdasarkan feedback agar hasil sesuai harapan. Dan untuk finalisasi, website siap online dan dapat langsung digunakan.',
+		image: icGoodDesign,
+	},
+];
+---
+
+<div
+	class='flex flex-col gap-[88px] max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 justify-center items-center'
+>
+	<div class='flex flex-col gap-6'>
+		<h1
+			class='text-[40px] text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold max-w-[737px] text-center'
+		>
+			Website Jadi Tepat Waktu & Terencana
+		</h1>
+		<p class='text-lg text-[#666666] dark:text-[#BBBBBB] text-center'>
+			Setiap tahap dikerjakan secara rapi agar hasil sesuai kebutuhan bisnis
+			Anda.
+		</p>
+	</div>
+	<div
+		class='grid grid-cols-1 lg:grid-cols-3 gap-x-[56px] gap-y-[70px] mt-[100px]'
+	>
+		{
+			aboutUsItems.map((item) => (
+				<div class='w-full h-[240px] bg-[#F9F9F9] dark:bg-[#1A1A1A] shadow-xl flex flex-col gap-4 justify-end items-center p-6 relative rounded-[12px]'>
+					<img src={item.image.src} class='absolute -top-20' />
+					<span class='text-xl text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold text-center'>
+						{item.title}
+					</span>
+					<p class='text-base text-[#666666] dark:text-[#BBBBBB] text-center font-normal'>
+						{item.desc}
+					</p>
+				</div>
+			))
+		}
+	</div>
+</div>

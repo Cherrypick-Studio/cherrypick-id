@@ -51,7 +51,7 @@ const aboutUsItems = [
 	<div class='grid grid-cols-1 lg:grid-cols-3 gap-x-[56px] gap-y-[70px]'>
 		{
 			aboutUsItems.map((item) => (
-				<div class='w-full h-[240px] bg-[#F9F9F9] dark:bg-[#1A1A1A] shadow-xl flex flex-col gap-4 justify-end items-center p-6 relative'>
+				<div class='w-full h-[240px] bg-[#F9F9F9] dark:bg-[#1A1A1A] shadow-xl flex flex-col gap-4 justify-end items-center p-6 relative rounded-[12px]'>
 					<img src={item.image.src} class='absolute -top-10' />
 					<span class='text-xl text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold text-center'>
 						{item.title}
