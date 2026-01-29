@@ -1,0 +1,67 @@
+---
+import icBestPrice from '../../assets/ic-client-1.svg';
+import icExpertTeam from '../../assets/ic-client-trilink.svg';
+import icGoodDesign from '../../assets/ic-client-verve.svg';
+import icCLientWave from '../../assets/ic-client-wave.svg';
+import { FaArrowRight } from 'react-icons/fa';
+import Carousel from '../Carousel.astro';
+
+const aboutUsItems = [
+	{
+		title: 'BlockWave',
+		desc: 'Jenis bisnis atau usaha`',
+		image: icBestPrice,
+	},
+	{
+		title: 'BlockWave',
+		desc: 'Jenis bisnis atau usaha`',
+		image: icExpertTeam,
+	},
+	{
+		title: 'BlockWave',
+		desc: 'Jenis bisnis atau usaha`',
+		image: icGoodDesign,
+	},
+	{
+		title: 'BlockWave',
+		desc: 'Jenis bisnis atau usaha`',
+		image: icCLientWave,
+	},
+];
+---
+
+<div class='flex flex-col gap-[88px] justify-center items-center'>
+	<div class='flex flex-col gap-6 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8'>
+		<h1
+			class='text-[40px] text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold text-center mx-auto'
+		>
+			Portfolio Website yang Pernah Kami Kerjakan
+		</h1>
+		<p class='text-lg text-[#666666] dark:text-[#BBBBBB] text-center'>
+			Mulai dari UMKM hingga brand profesional, semua dikerjakan dengan standar
+			desain
+		</p>
+	</div>
+	<Carousel speed={40} pauseOnHover={true} direction='left' gap={56}>
+		{
+			aboutUsItems.map((item) => (
+				<div class='w-[400px] flex-shrink-0 h-fit flex flex-col gap-4 relative rounded-[12px]'>
+					<img src={item.image.src} class='w-full h-[300px]' alt={item.title} />
+					<div class='flex w-full justify-between'>
+						<div class='flex flex-col gap-1'>
+							<span class='text-xl text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold'>
+								{item.title}
+							</span>
+							<p class='text-base text-[#666666] dark:text-[#BBBBBB] font-normal'>
+								{item.desc}
+							</p>
+						</div>
+						<button class='bg-[#C42026] h-fit p-3 rounded-[8px]'>
+							<FaArrowRight color='#FEFEFE' size={20} />
+						</button>
+					</div>
+				</div>
+			))
+		}
+	</Carousel>
+</div>

@@ -1,0 +1,57 @@
+---
+export interface Props {
+	speed?: number;
+	pauseOnHover?: boolean;
+	direction?: 'left' | 'right';
+	gap?: number;
+}
+
+const {
+	speed = 30,
+	pauseOnHover = true,
+	direction = 'left',
+	gap = 24,
+} = Astro.props;
+---
+
+<div
+	class='marquee-container w-full overflow-hidden'
+	data-pause-on-hover={pauseOnHover}
+>
+	<div
+		class='marquee-track flex'
+		style={`gap: ${gap}px; --marquee-gap: ${gap}px; --marquee-speed: ${speed}s; --marquee-direction: ${direction === 'left' ? 'normal' : 'reverse'};`}
+	>
+		<div class='marquee-content flex shrink-0' style={`gap: ${gap}px;`}>
+			<slot />
+		</div>
+		<div
+			class='marquee-content flex shrink-0'
+			style={`gap: ${gap}px;`}
+			aria-hidden='true'
+		>
+			<slot />
+		</div>
+	</div>
+</div>
+
+<style>
+	.marquee-track {
+		animation: marquee var(--marquee-speed) linear infinite;
+		animation-direction: var(--marquee-direction);
+		width: max-content;
+	}
+
+	.marquee-container[data-pause-on-hover='true']:hover .marquee-track {
+		animation-play-state: paused;
+	}
+
+	@keyframes marquee {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(calc(-50% - var(--marquee-gap) / 2));
+		}
+	}
+</style>
