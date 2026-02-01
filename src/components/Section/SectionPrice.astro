@@ -1,0 +1,24 @@
+---
+import PricingCards from './PricingCards';
+---
+
+<div class="flex flex-col gap-12 justify-center items-center">
+	<div class="flex flex-col gap-6 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+		<h1
+			class="text-[32px] md:text-[40px] text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold text-center mx-auto"
+		>
+			Harga Jelas, Bisa Disesuaikan dengan Kebutuhan
+		</h1>
+		<p
+			class="text-base md:text-lg text-[#666666] dark:text-[#BBBBBB] text-center lg:max-w-[1000px]"
+		>
+			Kami menyediakan paket yang jelas, mulai dari <b>per bulan</b> atau <b
+				>per tahun</b
+			>
+			bisa Anda pilih sesuai dengan kebutuhan bisnis Anda, atau konsultasikan jika
+			butuh fitur khusus.
+		</p>
+	</div>
+
+	<PricingCards client:load />
+</div>
