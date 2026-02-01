@@ -1,0 +1,136 @@
+---
+const reviews = [
+	{
+		name: 'Budi Santoso',
+		role: 'CEO, PT Maju Bersama',
+		avatar: 'BS',
+		rating: 5,
+		review:
+			'Website yang dibuat sangat profesional dan sesuai dengan kebutuhan bisnis kami. Tim Cherrypick sangat responsif dan membantu.',
+	},
+	{
+		name: 'Siti Rahayu',
+		role: 'Owner, Toko Online Hijab',
+		avatar: 'SR',
+		rating: 5,
+		review:
+			'Proses pengerjaan cepat dan hasilnya memuaskan. Penjualan online kami meningkat 50% setelah menggunakan website dari Cherrypick.',
+	},
+	{
+		name: 'Ahmad Wijaya',
+		role: 'Marketing Manager, Startup Tech',
+		avatar: 'AW',
+		rating: 5,
+		review:
+			'Desainnya modern dan user-friendly. Pelanggan kami sangat puas dengan tampilan website yang baru.',
+	},
+	{
+		name: 'Dewi Lestari',
+		role: 'Founder, Klinik Kecantikan',
+		avatar: 'DL',
+		rating: 5,
+		review:
+			'Sangat puas dengan hasil kerja tim Cherrypick. Website kami jadi lebih profesional dan booking online berjalan lancar.',
+	},
+	{
+		name: 'Rudi Hermawan',
+		role: 'Direktur, CV Karya Mandiri',
+		avatar: 'RH',
+		rating: 5,
+		review:
+			'Kualitas website sangat bagus dengan harga yang terjangkau. Maintenance juga sangat membantu.',
+	},
+	{
+		name: 'Maya Putri',
+		role: 'Owner, Restoran Nusantara',
+		avatar: 'MP',
+		rating: 5,
+		review:
+			'Website restoran kami jadi lebih menarik. Fitur reservasi online sangat membantu operasional kami.',
+	},
+];
+
+const doubledReviews = [...reviews, ...reviews];
+---
+
+<div class='flex flex-col gap-12 justify-center items-center overflow-hidden'>
+	<div class='flex flex-col gap-6 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8'>
+		<h1
+			class='text-[32px] md:text-[40px] text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold text-center mx-auto'
+		>
+			Review Jujur dari Klien Kami
+		</h1>
+		<p
+			class='text-base md:text-lg text-[#666666] dark:text-[#BBBBBB] text-center lg:max-w-[1000px]'
+		>
+			Pengalaman nyata dari klien yang sudah mempercayakan pembuatan website
+			kepada kami.
+		</p>
+	</div>
+
+	<div class='w-full overflow-hidden'>
+		<div class='marquee'>
+			<div class='marquee-content'>
+				{
+					doubledReviews.map((review) => (
+						<div class='flex-shrink-0 w-[350px] bg-white dark:bg-[#1A1A1A] border border-[#E5E5E5] dark:border-[#404040] rounded-2xl p-6 shadow-sm'>
+							<div class='flex items-center gap-4 mb-4'>
+								<div class='w-12 h-12 rounded-full bg-[#7C3AED] flex items-center justify-center text-white font-semibold'>
+									{review.avatar}
+								</div>
+								<div>
+									<h3 class='font-semibold text-[#1A1A1A] dark:text-[#FEFEFE]'>
+										{review.name}
+									</h3>
+									<p class='text-sm text-[#666666] dark:text-[#BBBBBB]'>
+										{review.role}
+									</p>
+								</div>
+							</div>
+							<div class='flex gap-1 mb-3'>
+								{Array.from({ length: review.rating }).map(() => (
+									<svg
+										class='w-5 h-5 text-yellow-400'
+										fill='currentColor'
+										viewBox='0 0 20 20'>
+										<path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
+									</svg>
+								))}
+							</div>
+							<p class='text-[#666666] dark:text-[#BBBBBB] text-sm leading-relaxed'>
+								"{review.review}"
+							</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.marquee {
+		display: flex;
+		overflow: hidden;
+		width: 100%;
+	}
+
+	.marquee-content {
+		display: flex;
+		gap: 1.5rem;
+		animation: marquee 30s linear infinite;
+	}
+
+	@keyframes marquee {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+
+	.marquee:hover .marquee-content {
+		animation-play-state: paused;
+	}
+</style>

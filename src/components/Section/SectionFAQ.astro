@@ -1,0 +1,22 @@
+---
+import FAQAccordion from './FAQAccordion';
+---
+
+<div
+	class='flex flex-col gap-12 justify-center items-center max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8'
+>
+	<div class='flex flex-col gap-6'>
+		<h1
+			class='text-[32px] md:text-[40px] text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold text-center mx-auto'
+		>
+			FAQ Seputar Jasa Pembuatan Website
+		</h1>
+		<p
+			class='text-base md:text-lg text-[#666666] dark:text-[#BBBBBB] text-center lg:max-w-[1000px]'
+		>
+			Kami rangkum pertanyaan yang paling sering ditanyakan oleh klien kami.
+		</p>
+	</div>
+
+	<FAQAccordion client:load />
+</div>
