@@ -4,6 +4,7 @@ interface PricingPlan {
 	title: string;
 	monthlyPrice: number;
 	yearlyPrice: number;
+	startForm?: number;
 	waktuPengerjaan: string;
 	features: string[];
 	isPopular?: boolean;
@@ -13,48 +14,63 @@ interface PricingPlan {
 const plans: PricingPlan[] = [
 	{
 		title: 'Landing Page Basic',
-		monthlyPrice: 1500000,
-		yearlyPrice: 14400000,
-		waktuPengerjaan: '7-14 Hari',
+		monthlyPrice: 150000,
+		yearlyPrice: 1800000,
+		startForm: 0,
+		waktuPengerjaan: '3-7 Hari',
 		features: [
-			'Landing Page 1 Halaman',
-			'Desain Responsif',
-			'Form Kontak',
-			'Integrasi WhatsApp',
-			'Hosting 1 Tahun',
+			'1 halaman landing page responsif',
+			'Desain menggunakan template premium (custom warna & logo)',
+			'4-6 section standar (Hero, Benefit, Testimoni, CTA, Footer)',
+			'WhatsApp integration',
+			'Domain .com atau .id',
+			'SSL certificate',
+			'SEO basic (meta tags, keywords)',
+			'2x revisi minor',
+			'Waktu pengerjaan: 3-7 hari'
 		],
 		isDiscount: true
 	},
 	{
 		title: 'Website Professional',
-		monthlyPrice: 3500000,
-		yearlyPrice: 33600000,
-		waktuPengerjaan: '14-21 Hari',
+		monthlyPrice: 300000,
+		yearlyPrice: 3600000,
+		startForm: 0,
+		waktuPengerjaan: '2-3 Minggu',
 		features: [
-			'Website hingga 5 Halaman',
-			'Desain Custom Premium',
-			'CMS Admin Panel',
-			'SEO Optimization',
-			'Integrasi Social Media',
-			'Hosting 1 Tahun',
-			'Support 3 Bulan',
+			'Multi-page website (5-8 halaman)',
+			'Semi-custom design (modifikasi template sesuai brand)',
+			'Halaman lengkap: Home, About, Services, Portfolio/Products, Blog (5 post), Contact',
+			'CMS WordPress dengan dashboard mudah',
+			'Integrasi Google Analytics & Facebook Pixel',
+			'SEO on-page optimization',
+			'Integrasi social media & WhatsApp Business',
+			'Form dinamis dengan notifikasi email',
+			'Gallery/portfolio showcase responsif',
+			'Speed optimization basic',
+			'Domain, hosting, SSL 1 tahun',
+			'3x revisi',
+			'1 bulan support teknis',
+			'Training lengkap + dokumentasi',
+			'Waktu pengerjaan: 2-3 minggu'
 		],
 		isPopular: true,
 		isDiscount: true
 	},
 	{
 		title: 'E-commerce / Custom Website',
-		monthlyPrice: 7500000,
-		yearlyPrice: 72000000,
-		waktuPengerjaan: '21-30 Hari',
+		monthlyPrice: 0,
+		yearlyPrice: 0,
+		startForm: 4500000,
+		waktuPengerjaan: '1-3 bulan',
 		features: [
-			'Website Unlimited Halaman',
-			'Desain Custom Eksklusif',
-			'Full CMS & Dashboard',
-			'E-Commerce Ready',
-			'Advanced SEO',
-			'Integrasi API Custom',
-			'Hosting 1 Tahun',
+			'Katalog produk unlimited',
+			'Shopping cart & checkout',
+			'Payment gateway (Midtrans/Xendit/DOKU)',
+			'Ongkir otomatis (JNE, SiCepat, dll)',
+			'Invoice & order management',
+			'Member area login',
+			'Admin dashboard',
 			'Support 6 Bulan',
 		],
 	},
@@ -75,7 +91,7 @@ export default function PricingCards() {
 			<div className="flex items-center gap-2 border border-[#DDDDDD] dark:border-[#666666] bg-[#FEFEFE] dark:bg-transparent p-1.5 rounded-[8px]">
 				<button
 					onClick={() => setIsYearly(false)}
-					className={`px-6 py-3 rounded-[8px] text-sm font-medium transition-all duration-300 ${!isYearly
+					className={`px-6 py-3 rounded-[8px] text-sm font-medium cursor-pointer transition-all duration-300 ${!isYearly
 						? 'bg-[#FFF5F6] dark:bg-[#0A0A0A] text-[#C42026] dark:text-[#FEFEFE]'
 						: 'text-[#666666] dark:text-[#BBBBBB]'
 						}`}
@@ -84,13 +100,13 @@ export default function PricingCards() {
 				</button>
 				<button
 					onClick={() => setIsYearly(true)}
-					className={`px-6 py-3 rounded-[8px] text-sm font-medium transition-all duration-300 relative ${isYearly
+					className={`px-6 py-3 rounded-[8px] text-sm font-medium transition-all duration-300 cursor-pointer relative ${isYearly
 						? 'bg-[#FFF5F6] dark:bg-[#0A0A0A] text-[#C42026] dark:text-[#FEFEFE]'
 						: 'text-[#666666] dark:text-[#BBBBBB]'
 						}`}
 				>
 					Per Tahun
-					<span className="absolute -top-2 -right-2 bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+					<span className="bg-[#FF7F00] text-white text-[10px] font-bold p-2 rounded-[8px] ml-2">
 						-20%
 					</span>
 				</button>
@@ -101,13 +117,14 @@ export default function PricingCards() {
 				{plans.map((plan) => (
 					<div
 						key={plan.title}
-						className={`pricing-card relative flex flex-col p-6 md:p-8 rounded-2xl border-2 transition-all duration-300 ${plan.isPopular
-							? 'bg-[#1A1A1A] dark:bg-[#FEFEFE] border-[#1A1A1A] dark:border-[#FEFEFE] lg:scale-105 lg:-my-4 shadow-2xl'
-							: 'bg-white dark:bg-[#2A2A2A] border-[#E5E5E5] dark:border-[#404040] hover:border-[#1A1A1A] dark:hover:border-[#FEFEFE]'
+						className={`pricing-card relative flex flex-col p-6 md:p-8 rounded-2xl border-2 transition-all duration-300 
+							${plan.isPopular
+								? 'bg-[#FFFBED] dark:bg-[#333333] border-[#FFCA00] dark:border-[#FFCA00] lg:scale-105 lg:-my-4 shadow-2xl'
+								: 'bg-[#FEFEFE] dark:bg-[#1A1A1A] border-[#DDDDDD] dark:border-[#404040] hover:border-[#444444] dark:hover:border-[#FEFEFE]'
 							}`}
 					>
 						{plan.isDiscount && (
-							<div className="absolute -top-4 right-0 -translate-x-1/2">
+							<div className="absolute -top-4 right-0">
 								<span className="bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold px-4 py-1.5 rounded-[8px]">
 									Diskon 20%
 								</span>
@@ -116,34 +133,27 @@ export default function PricingCards() {
 
 						{/* Title */}
 						<h3
-							className={`text-xl md:text-2xl font-bold mb-4 ${plan.isPopular
-								? 'text-white dark:text-[#1A1A1A]'
-								: 'text-[#1A1A1A] dark:text-[#FEFEFE]'
-								}`}
+							className={`text-xl font-semibold mb-3 text-center`}
 						>
 							{plan.title}
 						</h3>
 
 						{/* Price */}
-						<div className="mb-6">
-							{isYearly ? (
+						{plan.startForm !== 0 && <span className='text-center text-base text-[#666666] dark:text-[#BBBBBB]'>Start Form</span>}
+
+						<div className="mb-3 mx-auto">
+							{plan.startForm === 0 ? isYearly ? (
 								<div>
 									<div className="flex items-baseline gap-2 flex-wrap">
 										<span
-											className={`text-3xl md:text-4xl font-bold ${plan.isPopular
-												? 'text-white dark:text-[#1A1A1A]'
-												: 'text-[#1A1A1A] dark:text-[#FEFEFE]'
-												}`}
+											className={`text-[28px] text-[#1A1A1A] dark:text-[#FEFEFE] font-bold`}
 										>
 											Rp {formatPrice(plan.yearlyPrice)}
-										</span>
+										</span>{" "}
 										<span
-											className={`text-sm ${plan.isPopular
-												? 'text-gray-300 dark:text-gray-600'
-												: 'text-[#666666] dark:text-[#BBBBBB]'
-												}`}
+											className={`text-xl text-[#666666] dark:text-[#BBBBBB]`}
 										>
-											/tahun
+											/ tahun
 										</span>
 									</div>
 									<div
@@ -158,67 +168,41 @@ export default function PricingCards() {
 							) : (
 								<div className="flex items-baseline gap-2 flex-wrap">
 									<span
-										className={`text-3xl md:text-4xl font-bold ${plan.isPopular
-											? 'text-white dark:text-[#1A1A1A]'
-											: 'text-[#1A1A1A] dark:text-[#FEFEFE]'
-											}`}
+											className={`text-[28px] text-[#1A1A1A] dark:text-[#FEFEFE] font-bold`}
 									>
 										Rp {formatPrice(plan.monthlyPrice)}
-									</span>
-									<span
-										className={`text-sm ${plan.isPopular
-											? 'text-gray-300 dark:text-gray-600'
-											: 'text-[#666666] dark:text-[#BBBBBB]'
-											}`}
-									>
-										/bulan
+										</span>{" "}
+										<span
+											className={`text-xl text-[#666666] dark:text-[#BBBBBB]`}
+										>
+											/ bulan
 									</span>
 								</div>
-							)}
+							) : <span
+								className={`text-[28px] text-[#1A1A1A] dark:text-[#FEFEFE] font-bold`}
+							>
+								Rp {formatPrice(plan.startForm || 0)}
+							</span>}
+
 						</div>
 
 						{/* Waktu Pengerjaan */}
 						<div
-							className={`flex items-center gap-2 mb-6 pb-6 border-b ${plan.isPopular
-								? 'border-gray-600 dark:border-gray-300'
-								: 'border-[#E5E5E5] dark:border-[#404040]'
-								}`}
+							className={`flex items-center gap-2 mb-6 pb-6 border-b border-[#D9D9D9] w-full justify-center`}
 						>
-							<svg
-								className={`w-5 h-5 ${plan.isPopular
-									? 'text-gray-300 dark:text-gray-600'
-									: 'text-[#666666] dark:text-[#BBBBBB]'
-									}`}
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-								/>
-							</svg>
 							<span
-								className={`text-sm font-medium ${plan.isPopular
-									? 'text-gray-300 dark:text-gray-600'
-									: 'text-[#666666] dark:text-[#BBBBBB]'
-									}`}
+								className={`text-base text-[#666666] dark:text-[#BBBBBB] text-center`}
 							>
-								Waktu Pengerjaan: {plan.waktuPengerjaan}
+								Waktu Pengerjaan: <span className='font-bold'>{plan.waktuPengerjaan}</span>
 							</span>
 						</div>
 
 						{/* Features */}
-						<ul className="flex-1 space-y-3 mb-8">
+						<ul className="flex-1 space-y-3 mb-8 pb-6 border-b border-[#D9D9D9]">
 							{plan.features.map((feature, index) => (
 								<li key={index} className="flex items-start gap-3">
 									<svg
-										className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.isPopular
-											? 'text-green-400 dark:text-green-600'
-											: 'text-green-500 dark:text-green-400'
-											}`}
+										className={`w-5 h-5 flex-shrink-0 mt-0.5 text-[#1A1A1A] dark:text-[#BBBBBB]`}
 										fill="none"
 										stroke="currentColor"
 										viewBox="0 0 24 24"
@@ -231,25 +215,22 @@ export default function PricingCards() {
 										/>
 									</svg>
 									<span
-										className={`text-sm ${plan.isPopular
-											? 'text-gray-200 dark:text-gray-700'
-											: 'text-[#666666] dark:text-[#BBBBBB]'
-											}`}
+										className={`text-sm text-[#666666] dark:text-[#BBBBBB]`}
 									>
 										{feature}
 									</span>
 								</li>
 							))}
 						</ul>
-
+						<span className='text-center mb-8 text-[#666666] dark:text-[#BBBBBB] text-base'>Tertarik dengan Paket Website ini ?</span>
 						{/* WhatsApp Button */}
 						<a
 							href={`https://wa.me/${whatsappNumber}?text=Halo, saya tertarik dengan paket ${plan.title}`}
 							target="_blank"
 							rel="noopener noreferrer"
 							className={`flex items-center justify-center gap-2 w-full py-4 rounded-xl font-medium transition-all duration-300 ${plan.isPopular
-								? 'bg-white dark:bg-[#1A1A1A] text-[#1A1A1A] dark:text-white hover:bg-gray-100 dark:hover:bg-[#333333]'
-								: 'bg-[#1A1A1A] dark:bg-[#FEFEFE] text-white dark:text-[#1A1A1A] hover:bg-[#333333] dark:hover:bg-gray-200'
+								? 'bg-[#1A1A1A] dark:bg-[#FFCA00] text-white dark:text-[#1A1A1A] hover:opacity-80 '
+								: 'bg-[#C42026] text-white  hover:opacity-80'
 								}`}
 						>
 							<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
