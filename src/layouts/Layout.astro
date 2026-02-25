@@ -9,6 +9,8 @@ import SectionPorto from '../components/Section/SectionPorto.astro';
 import SectionPrice from '../components/Section/SectionPrice.astro';
 import SectionReview from '../components/Section/SectionReview.astro';
 import SectionFAQ from '../components/Section/SectionFAQ.astro';
+import SectionProjects from '../components/Section/SectionProjects.astro';
+import SectionBanner from '../components/Section/SectionBanner.astro';
 ---
 
 <!doctype html>
@@ -42,10 +44,11 @@ import SectionFAQ from '../components/Section/SectionFAQ.astro';
 			<SectionPorto />
 			<div class='w-full h-[1px] bg-[#D9D9D9] mx-auto'></div>
 			<SectionPrice />
-			<div class='w-full h-[1px] bg-[#D9D9D9] mx-auto'></div>
+			<SectionProjects />
 			<SectionReview />
 			<div class='w-full h-[1px] bg-[#D9D9D9] mx-auto'></div>
 			<SectionFAQ />
+			<SectionBanner />
 			<Footer />
 		</main>
 	</body>
