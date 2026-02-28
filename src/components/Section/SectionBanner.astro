@@ -1,5 +1,6 @@
 ---
 import icBanner from '../../assets/ic-bg-cherrypick.svg';
+import { whatsappUrlWithText } from '../../config';
 ---
 
 <div
@@ -16,7 +17,7 @@ import icBanner from '../../assets/ic-bg-cherrypick.svg';
 		dan siap menjangkau lebih banyak pelanggan.</span
 	>
 	<a
-		href={`https://wa.me/02929?text=Halo, saya tertarik dengan paket`}
+		href={whatsappUrlWithText('Halo, saya tertarik dengan paket')}
 		target='_blank'
 		rel='noopener noreferrer'
 		class='bg-white text-[#1A1A1A] hover:opacity-80 flex items-center py-4 px-6 gap-3 rounded-xl w-fit'

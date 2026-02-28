@@ -2,6 +2,14 @@
 import heroImg from '../../assets/ic-logo-banner.svg';
 import WaveBackground from '../WaveBackground.astro';
 import CountUp from '../CountUp.astro';
+
+const satisfiedClients = [
+	{ name: 'Budi Santoso', avatar: 'BS' },
+	{ name: 'Siti Rahayu', avatar: 'SR' },
+	{ name: 'Ahmad Wijaya', avatar: 'AW' },
+];
+
+const avatarColors = ['bg-[#7C3AED]', 'bg-[#C42026]', 'bg-[#059669]'];
 ---
 
 <div class='w-full relative h-fit overflow-hidden'>
@@ -45,17 +53,37 @@ import CountUp from '../CountUp.astro';
 								>Klien Puas</span
 							>
 						</div>
-						<div class='flex'>
+						<div class='flex -space-x-2'>
 							{
-								Array.from({ length: 3 }).map((_, index) => (
-									<div class='w-10 h-10 rounded-full border border-white bg-gray-400' />
+								satisfiedClients.map((client, index) => (
+									<div
+										class={`w-10 h-10 rounded-full border-2 border-white dark:border-[#1A1A1A] ${avatarColors[index]} flex items-center justify-center text-white text-sm font-semibold`}
+										title={client.name}
+									>
+										{client.avatar}
+									</div>
 								))
 							}
 						</div>
 					</div>
 				</div>
 			</div>
-			<img src={heroImg.src} class='w-full hidden lg:block' />
+			<img src={heroImg.src} class='w-full hidden lg:block animate-float' />
 		</div>
 	</div>
 </div>
+
+<style>
+	@keyframes float {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-12px);
+		}
+	}
+	.animate-float {
+		animation: float 3s ease-in-out infinite;
+	}
+</style>

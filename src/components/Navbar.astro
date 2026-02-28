@@ -1,7 +1,7 @@
 ---
 import logo from '../assets/ic-logo-only.svg';
 import logoWhite from '../assets/ic-logo-only-white.svg';
-import ThemeToggle from './ThemeToggle.astro';
+import { whatsappUrl } from '../config';
 ---
 
 <nav
@@ -39,11 +39,10 @@ import ThemeToggle from './ThemeToggle.astro';
 					class='text-gray-700 dark:text-gray-200 hover:text-red-500 dark:hover:text-red-400 transition-colors font-medium'
 					>Portofolio</a
 				>
-				<ThemeToggle />
 			</div>
 
 			<a
-				href='https://wa.me/6281234567890'
+				href={whatsappUrl}
 				target='_blank'
 				rel='noopener noreferrer'
 				class='flex items-center gap-2 bg-[#1A1A1A] hover:opacity-50 text-white px-6 py-4 rounded-[12px] transition-colors font-medium'
@@ -97,9 +96,6 @@ import ThemeToggle from './ThemeToggle.astro';
 					class='block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-red-500 dark:hover:text-red-400'
 					>Portofolio</a
 				>
-				<div class='px-3 py-2'>
-					<ThemeToggle />
-				</div>
 			</div>
 		</div>
 	</div>

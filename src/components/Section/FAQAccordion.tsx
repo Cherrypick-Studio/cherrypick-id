@@ -23,7 +23,7 @@ const faqs = [
 	},
 	{
 		question: 'Apakah ada layanan maintenance setelah website jadi?',
-		answer: 'Kami menyediakan layanan maintenance bulanan yang mencakup update keamanan, backup rutin, monitoring uptime, dan support teknis. Harga maintenance mulai dari Rp 300.000/bulan.',
+		answer: 'Kami menyediakan layanan maintenance bulanan yang mencakup update keamanan, backup rutin, monitoring uptime, dan support teknis. Harga maintenance mulai dari Rp 100.000/bulan.',
 	},
 ];
 

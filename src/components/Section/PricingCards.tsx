@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { whatsappUrlWithText } from '../../config';
 
 interface PricingPlan {
 	title: string;
@@ -96,7 +97,6 @@ const formatPrice = (price: number) => {
 	return new Intl.NumberFormat('id-ID').format(price);
 };
 
-const whatsappNumber = '6281234567890';
 const MIN_VISIBLE_FEATURES = 8;
 
 function PricingCard({ plan, isYearly }: { plan: PricingPlan; isYearly: boolean }) {
@@ -118,7 +118,7 @@ function PricingCard({ plan, isYearly }: { plan: PricingPlan; isYearly: boolean 
 					: 'bg-[#FEFEFE] dark:bg-[#1A1A1A] border-[#DDDDDD] dark:border-[#404040] hover:border-[#444444] dark:hover:border-[#FEFEFE]'
 				}`}
 		>
-			{plan.isDiscount && (
+			{plan.isDiscount && isYearly && (
 				<div className="absolute -top-4 right-0">
 					<span className="bg-[#FF7F00] text-white text-xs font-bold px-4 py-1.5 rounded-[8px]">
 						Diskon 20%
@@ -262,7 +262,7 @@ function PricingCard({ plan, isYearly }: { plan: PricingPlan; isYearly: boolean 
 
 			{/* WhatsApp Button */}
 			<a
-				href={`https://wa.me/${whatsappNumber}?text=Halo, saya tertarik dengan paket ${plan.title}`}
+				href={whatsappUrlWithText(`Halo, saya tertarik dengan paket ${plan.title}`)}
 				target="_blank"
 				rel="noopener noreferrer"
 				className={`flex items-center justify-center gap-2 w-full py-4 rounded-xl font-medium transition-all duration-300 ${plan.isPopular
