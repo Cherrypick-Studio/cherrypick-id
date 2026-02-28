@@ -3,7 +3,6 @@ import icBestPrice from '../../assets/ic-client-1.svg';
 import icExpertTeam from '../../assets/ic-client-trilink.svg';
 import icGoodDesign from '../../assets/ic-client-verve.svg';
 import icCLientWave from '../../assets/ic-client-wave.svg';
-import { FaArrowRight } from 'react-icons/fa';
 import Carousel from '../Carousel.astro';
 
 const aboutUsItems = [
@@ -32,11 +31,11 @@ const aboutUsItems = [
 
 <div class='flex flex-col gap-[88px] justify-center items-center'>
 	<div class='flex flex-col gap-6 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8'>
-		<h1
+		<h2
 			class='text-[40px] text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold text-center mx-auto'
 		>
 			Portfolio Website yang Pernah Kami Kerjakan
-		</h1>
+		</h2>
 		<p class='text-lg text-[#666666] dark:text-[#BBBBBB] text-center'>
 			Mulai dari UMKM hingga brand profesional, semua dikerjakan dengan standar
 			desain
@@ -46,7 +45,7 @@ const aboutUsItems = [
 		{
 			aboutUsItems.map((item) => (
 				<div class='w-[400px] flex-shrink-0 h-fit flex flex-col gap-4 relative rounded-[12px]'>
-					<img src={item.image.src} class='w-full h-[300px]' alt={item.title} />
+					<img src={item.image.src} class='w-full h-[300px]' alt={`${item.title} - ${item.desc}`} width='400' height='300' />
 					<div class='flex w-full justify-between'>
 						<div class='flex flex-col gap-1'>
 							<span class='text-xl text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold'>
@@ -56,8 +55,10 @@ const aboutUsItems = [
 								{item.desc}
 							</p>
 						</div>
-						<button class='bg-[#C42026] h-fit p-3 rounded-[8px]'>
-							<FaArrowRight color='#FEFEFE' size={20} />
+						<button class='bg-[#C42026] h-fit p-3 rounded-[8px]' aria-label={`View ${item.title} project`}>
+							<svg stroke='currentColor' fill='currentColor' stroke-width='0' viewBox='0 0 448 512' color='#FEFEFE' style='color:#FEFEFE' height='20' width='20' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>
+								<path d='M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z'></path>
+							</svg>
 						</button>
 					</div>
 				</div>

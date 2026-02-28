@@ -153,4 +153,11 @@
 			transform: translateY(-8px);
 		}
 	}
+	
+	@media (prefers-reduced-motion: reduce) {
+		.wave-animation,
+		.wave-paths path {
+			animation: none;
+		}
+	}
 </style>

@@ -44,6 +44,9 @@ export default function FAQAccordion() {
 					<button
 						onClick={() => toggleFAQ(index)}
 						className="w-full flex items-center justify-between p-5 text-left bg-white dark:bg-[#1A1A1A] hover:bg-gray-50 dark:hover:bg-[#222222] transition-colors"
+						aria-expanded={openIndex === index}
+						aria-controls={`faq-panel-${index}`}
+						id={`faq-button-${index}`}
 					>
 						<span className="font-medium text-[#1A1A1A] dark:text-[#FEFEFE] pr-4">
 							{faq.question}
@@ -55,6 +58,7 @@ export default function FAQAccordion() {
 							fill="none"
 							stroke="currentColor"
 							viewBox="0 0 24 24"
+							aria-hidden="true"
 						>
 							<path
 								strokeLinecap="round"
@@ -68,6 +72,9 @@ export default function FAQAccordion() {
 						className={`grid transition-all duration-300 ease-in-out ${
 							openIndex === index ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
 						}`}
+						id={`faq-panel-${index}`}
+						role="region"
+						aria-labelledby={`faq-button-${index}`}
 					>
 						<div className="overflow-hidden">
 							<div className="p-5 pt-0 bg-white dark:bg-[#1A1A1A]">

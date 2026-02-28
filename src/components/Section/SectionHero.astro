@@ -12,7 +12,7 @@ const satisfiedClients = [
 const avatarColors = ['bg-[#7C3AED]', 'bg-[#C42026]', 'bg-[#059669]'];
 ---
 
-<div class='w-full relative h-fit overflow-hidden'>
+<div class='w-full relative h-fit overflow-hidden' id='hero'>
 	<WaveBackground />
 	<div class='max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-[110px]'>
 		<div class='flex justify-between items-center'>
@@ -33,14 +33,16 @@ const avatarColors = ['bg-[#7C3AED]', 'bg-[#C42026]', 'bg-[#059669]'];
 				</p>
 				<div class='flex flex-col lg:flex-row gap-12 items-center mt-6'>
 					<div class='flex items-center gap-6'>
-						<button
-							class='bg-[#C42026] shadow-xl py-4 px-6 rounded-[12px] text-sm font-medium text-[#FEFEFE]'
+						<a
+							href='#pricing'
+							class='bg-[#C42026] shadow-xl py-4 px-6 rounded-[12px] text-sm font-medium text-[#FEFEFE] hover:opacity-90 transition-opacity'
 							>Cek Harga Kami
-						</button>
-						<button
-							class='bg-white shadow-xl py-4 px-6 rounded-[12px] text-sm font-medium text-[#1A1A1A]'
+						</a>
+						<a
+							href='#portfolio'
+							class='bg-white shadow-xl py-4 px-6 rounded-[12px] text-sm font-medium text-[#1A1A1A] hover:opacity-90 transition-opacity'
 							>Lihat Portfolio
-						</button>
+						</a>
 					</div>
 					<div class='flex gap-4'>
 						<div class='flex flex-col gap-0'>
@@ -59,6 +61,7 @@ const avatarColors = ['bg-[#7C3AED]', 'bg-[#C42026]', 'bg-[#059669]'];
 									<div
 										class={`w-10 h-10 rounded-full border-2 border-white dark:border-[#1A1A1A] ${avatarColors[index]} flex items-center justify-center text-white text-sm font-semibold`}
 										title={client.name}
+										aria-label={client.name}
 									>
 										{client.avatar}
 									</div>
@@ -68,7 +71,13 @@ const avatarColors = ['bg-[#7C3AED]', 'bg-[#C42026]', 'bg-[#059669]'];
 					</div>
 				</div>
 			</div>
-			<img src={heroImg.src} class='w-full hidden lg:block animate-float' />
+			<img
+				src={heroImg.src}
+				alt='Cherrypick website design illustration'
+				class='w-full hidden lg:block animate-float'
+				width='600'
+				height='600'
+			/>
 		</div>
 	</div>
 </div>
@@ -85,5 +94,11 @@ const avatarColors = ['bg-[#7C3AED]', 'bg-[#C42026]', 'bg-[#059669]'];
 	}
 	.animate-float {
 		animation: float 3s ease-in-out infinite;
+	}
+	
+	@media (prefers-reduced-motion: reduce) {
+		.animate-float {
+			animation: none;
+		}
 	}
 </style>

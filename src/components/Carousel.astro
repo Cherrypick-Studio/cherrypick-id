@@ -54,4 +54,13 @@ const {
 			transform: translateX(calc(-50% - var(--marquee-gap) / 2));
 		}
 	}
+	
+	@media (prefers-reduced-motion: reduce) {
+		.marquee-track {
+			animation: none;
+		}
+		.marquee-content {
+			justify-content: flex-start;
+		}
+	}
 </style>

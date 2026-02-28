@@ -43,16 +43,16 @@ const aboutUsItems = [
 <div
 	class='flex flex-col gap-[88px] max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 justify-center items-center'
 >
-	<h1
+	<h2
 		class='text-[40px] text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold max-w-[737px] text-center'
 	>
 		Kenapa Banyak Bisnis Mempercayakan Website-nya ke Kami?
-	</h1>
+	</h2>
 	<div class='grid grid-cols-1 lg:grid-cols-3 gap-x-[56px] gap-y-[70px]'>
 		{
 			aboutUsItems.map((item) => (
 				<div class='w-full h-[240px] bg-[#F9F9F9] dark:bg-[#1A1A1A] shadow-xl flex flex-col gap-4 justify-end items-center p-6 relative rounded-[12px]'>
-					<img src={item.image.src} class='absolute -top-10' />
+					<img src={item.image.src} alt={item.title} class='absolute -top-10' width='100' height='100' />
 					<span class='text-xl text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold text-center'>
 						{item.title}
 					</span>

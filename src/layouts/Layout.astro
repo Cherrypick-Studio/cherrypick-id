@@ -25,29 +25,155 @@ import SectionBanner from '../components/Section/SectionBanner.astro';
 			if (isDark) document.documentElement.classList.add('dark');
 		</script>
 		<meta charset='UTF-8' />
-		<meta name='viewport' content='width=device-width' />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-		<meta name='generator' content={Astro.generator} />
-		<title>Cherrypick - Jasa Pembuatan Website Profesional</title>
+		
+		<!-- SEO Meta Tags -->
+		<title>Cherrypick - Jasa Pembuatan Website Profesional | Mudah & Cepat</title>
+		<meta name='description' content='Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau mulai Rp 150.000/bulan, desain modern, SEO friendly, dan siap pakai. Konsultasi gratis!' />
+		<meta name='keywords' content='jasa pembuatan website, website profesional, jasa website murah, website UMKM, website company profile, jasa web design Indonesia' />
+		<link rel='canonical' href='https://cherrypick.id/' />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property='og:type' content='website' />
+		<meta property='og:url' content='https://cherrypick.id/' />
+		<meta property='og:title' content='Cherrypick - Jasa Pembuatan Website Profesional | Mudah & Cepat' />
+		<meta property='og:description' content='Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau mulai Rp 150.000/bulan, desain modern, SEO friendly, dan siap pakai.' />
+		<meta property='og:image' content='https://cherrypick.id/og-image.jpg' />
+		<meta property='og:locale' content='id_ID' />
+		<meta property='og:site_name' content='Cherrypick Studio' />
+		
+		<!-- Twitter Card -->
+		<meta name='twitter:card' content='summary_large_image' />
+		<meta name='twitter:url' content='https://cherrypick.id/' />
+		<meta name='twitter:title' content='Cherrypick - Jasa Pembuatan Website Profesional' />
+		<meta name='twitter:description' content='Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau, desain modern, SEO friendly.' />
+		<meta name='twitter:image' content='https://cherrypick.id/og-image.jpg' />
+		
+		<!-- Additional Meta -->
+		<meta name='theme-color' content='#C42026' />
+		<meta name='robots' content='index, follow' />
+		<meta name='language' content='Indonesian' />
+		<meta name='author' content='Cherrypick Studio' />
+		
+		<!-- Preconnect to external domains -->
+		<link rel='preconnect' href='https://wa.me' crossorigin />
+		<link rel='preconnect' href='https://maps.app.goo.gl' crossorigin />
+		
+		<!-- Structured Data - LocalBusiness -->
+		<script type='application/ld+json' is:inline>
+			{
+				"@context": "https://schema.org",
+				"@type": "LocalBusiness",
+				"name": "Cherrypick Studio",
+				"image": "https://cherrypick.id/og-image.jpg",
+				"description": "Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan dengan harga terjangkau dan desain modern",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Malang",
+					"addressRegion": "East Java",
+					"addressCountry": "ID"
+				},
+				"telephone": "+6282218339682",
+				"email": "hello@cherrypick.id",
+				"url": "https://cherrypick.id",
+				"priceRange": "Rp 150.000 - Rp 4.500.000",
+				"sameAs": [
+					"https://www.facebook.com/cherrypickid.studio",
+					"https://www.instagram.com/cherrypick.studioid/",
+					"https://www.linkedin.com/company/cherrypick-studio/",
+					"https://www.behance.net/cherrypick-studio",
+					"https://dribbble.com/cherrypick-studio"
+				]
+			}
+		</script>
+		
+		<!-- Structured Data - FAQPage -->
+		<script type='application/ld+json' is:inline>
+			{
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				"mainEntity": [
+					{
+						"@type": "Question",
+						"name": "Berapa lama waktu pengerjaan website?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Waktu pengerjaan website bervariasi tergantung kompleksitas proyek. Untuk website landing page sederhana membutuhkan 3-5 hari kerja, website company profile 1-2 minggu, dan untuk website e-commerce atau custom 2-4 minggu."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Apakah bisa request revisi setelah website jadi?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Tentu bisa! Kami menyediakan 3x revisi gratis setelah website selesai. Untuk revisi tambahan atau perubahan besar, akan dikenakan biaya tambahan sesuai dengan scope pekerjaan."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Apakah termasuk domain dan hosting?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Untuk paket tahunan, domain .com dan hosting sudah termasuk dalam harga. Untuk paket bulanan, Anda perlu menyediakan hosting sendiri atau bisa menggunakan layanan hosting kami dengan biaya terpisah."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Bagaimana sistem pembayarannya?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Pembayaran dilakukan dengan sistem DP 50% di awal dan pelunasan 50% setelah website selesai. Kami menerima transfer bank, e-wallet, dan kartu kredit."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Apakah website-nya responsive untuk mobile?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Ya, semua website yang kami buat sudah responsive dan mobile-friendly. Website akan tampil optimal di semua perangkat termasuk smartphone, tablet, dan desktop."
+						}
+					},
+					{
+						"@type": "Question",
+						"name": "Apakah ada layanan maintenance setelah website jadi?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Kami menyediakan layanan maintenance bulanan yang mencakup update keamanan, backup rutin, monitoring uptime, dan support teknis. Harga maintenance mulai dari Rp 100.000/bulan."
+						}
+					}
+				]
+			}
+		</script>
 	</head>
 	<body
-		class='min-h-screen flex flex-col bg-white dark:bg-[#282828] text-gray-900 dark:text-gray-100 transition-colors'
+		class='min-h-screen flex flex-col bg-white dark:bg-[#282828] text-gray-900 dark:text-gray-100'
 	>
 		<Navbar />
 		<main class='flex flex-col gap-[120px]'>
 			<SectionHero />
-			<SectionAboutUs />
+			<section id='about'>
+				<SectionAboutUs />
+			</section>
 			<div class='w-full h-[1px] bg-[#D9D9D9] mx-auto'></div>
-			<SectionTime />
+			<section id='process'>
+				<SectionTime />
+			</section>
 			<SectionClient />
 			<div class='w-full h-[1px] bg-[#D9D9D9] mx-auto'></div>
-			<SectionPorto />
+			<section id='portfolio'>
+				<SectionPorto />
+			</section>
 			<div class='w-full h-[1px] bg-[#D9D9D9] mx-auto'></div>
-			<SectionPrice />
+			<section id='pricing'>
+				<SectionPrice />
+			</section>
 			<SectionProjects />
 			<SectionReview />
 			<div class='w-full h-[1px] bg-[#D9D9D9] mx-auto'></div>
-			<SectionFAQ />
+			<section id='faq'>
+				<SectionFAQ />
+			</section>
 			<SectionBanner />
 			<Footer />
 		</main>
