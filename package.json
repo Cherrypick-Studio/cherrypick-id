@@ -1,6 +1,28 @@
 {
   "name": "cherrypick-id",
   "type": "module",
+  "description": "Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau, desain modern, SEO friendly.",
+  "keywords": [
+    "jasa pembuatan website",
+    "website profesional",
+    "jasa website murah",
+    "website UMKM",
+    "website company profile",
+    "jasa web design Indonesia"
+  ],
+  "author": "Cherrypick Studio",
+  "license": "MIT",
+  "homepage": "https://id.cherrypick.id",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cherrypick-studio/cherrypick-id.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cherrypick-studio/cherrypick-id/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
