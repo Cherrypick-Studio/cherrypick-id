@@ -59,6 +59,17 @@ import SectionBanner from '../components/Section/SectionBanner.astro';
 		<!-- Preconnect to external domains -->
 		<link rel='preconnect' href='https://wa.me' crossorigin />
 		<link rel='preconnect' href='https://maps.app.goo.gl' crossorigin />
+		<link rel='preconnect' href='https://www.googletagmanager.com' crossorigin />
+		
+		<!-- Google tag (gtag.js) -->
+		<script async src='https://www.googletagmanager.com/gtag/js?id=G-ZZSP9JYL3P'></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-ZZSP9JYL3P');
+		</script>
+		<!-- End Google tag -->
 		
 		<!-- Structured Data - LocalBusiness -->
 		<script type='application/ld+json' is:inline>
@@ -149,7 +160,6 @@ import SectionBanner from '../components/Section/SectionBanner.astro';
 		<!-- Cloudflare Web Analytics -->
 		<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7187a12ab3084bbb92ace072d76d9c76"}'></script>
 		<!-- End Cloudflare Web Analytics -->
-
 	</head>
 	<body
 		class='min-h-screen flex flex-col bg-white dark:bg-[#282828] text-gray-900 dark:text-gray-100'
