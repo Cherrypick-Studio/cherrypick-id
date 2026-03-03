@@ -42,7 +42,13 @@ const aboutUsItems = [
 		{
 			aboutUsItems.map((item) => (
 				<div class='w-full h-[240px] bg-[#F9F9F9] dark:bg-[#1A1A1A] shadow-xl flex flex-col gap-4 justify-end items-center p-6 relative rounded-[12px]'>
-					<img src={item.image.src} alt={item.title} class='absolute -top-20' width='140' height='140' />
+					<img
+						src={item.image.src}
+						alt={item.title}
+						class='absolute -top-10'
+						width='140'
+						height='140'
+					/>
 					<span class='text-xl text-[#1A1A1A] dark:text-[#FEFEFE] font-semibold text-center'>
 						{item.title}
 					</span>
