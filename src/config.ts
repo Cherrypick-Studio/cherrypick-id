@@ -2,7 +2,7 @@
  * Site-wide configuration (contact, etc.)
  */
 
-export const WHATSAPP_NUMBER = '6282218339682';
+export const WHATSAPP_NUMBER = '6282326546380';
 
 /** Google Maps link for office/location */
 export const MAPS_URL = 'https://maps.app.goo.gl/tXsP96mb2uXaAseQ6';
