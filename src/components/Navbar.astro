@@ -1,7 +1,7 @@
 ---
 import logo from '../assets/ic-logo-only.svg';
 import logoWhite from '../assets/ic-logo-only-white.svg';
-import { whatsappUrl } from '../config';
+import { whatsappUrlWithText } from '../config';
 ---
 
 <nav
@@ -42,7 +42,7 @@ import { whatsappUrl } from '../config';
 			</div>
 
 			<a
-				href={whatsappUrl}
+				href={whatsappUrlWithText('Halo Cherrypick, saya mau konsultasi website untuk bisnis saya.')}
 				target='_blank'
 				rel='noopener noreferrer'
 				class='flex items-center gap-2 bg-[#1A1A1A] hover:opacity-50 text-white px-6 py-4 rounded-[12px] transition-colors font-medium'

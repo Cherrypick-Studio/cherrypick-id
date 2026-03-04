@@ -227,5 +227,14 @@ import SectionBanner from '../components/Section/SectionBanner.astro';
 			width: 100%;
 			height: 100%;
 		}
+		/* Offset scroll target so fixed navbar doesn’t cover section */
+		#pricing,
+		#portfolio,
+		#about,
+		#process,
+		#hero,
+		#faq {
+			scroll-margin-top: 5.5rem;
+		}
 	</style>
 </html>
