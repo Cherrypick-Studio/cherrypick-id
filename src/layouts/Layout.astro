@@ -1,316 +1,378 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import SectionHero from '../components/Section/SectionHero.astro';
-import SectionAboutUs from '../components/Section/SectionAboutUs.astro';
-import SectionTime from '../components/Section/SectionTime.astro';
-import SectionClient from '../components/Section/SectionClients.astro';
-import SectionPorto from '../components/Section/SectionPorto.astro';
-import SectionPrice from '../components/Section/SectionPrice.astro';
-import SectionReview from '../components/Section/SectionReview.astro';
-import SectionFAQ from '../components/Section/SectionFAQ.astro';
-import SectionProjects from '../components/Section/SectionProjects.astro';
-import SectionBanner from '../components/Section/SectionBanner.astro';
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import SectionHero from "../components/Section/SectionHero.astro";
+import SectionAboutUs from "../components/Section/SectionAboutUs.astro";
+import SectionTime from "../components/Section/SectionTime.astro";
+import SectionClient from "../components/Section/SectionClients.astro";
+import SectionPorto from "../components/Section/SectionPorto.astro";
+import SectionPrice from "../components/Section/SectionPrice.astro";
+import SectionReview from "../components/Section/SectionReview.astro";
+import SectionFAQ from "../components/Section/SectionFAQ.astro";
+import SectionProjects from "../components/Section/SectionProjects.astro";
+import SectionBanner from "../components/Section/SectionBanner.astro";
 ---
 
 <!doctype html>
-<html lang='id' class='scroll-smooth'>
-	<head>
-		<script is:inline>
-			const theme = localStorage.getItem('theme') || 'system';
-			const isDark =
-				theme === 'dark' ||
-				(theme === 'system' &&
-					window.matchMedia('(prefers-color-scheme: dark)').matches);
-			if (isDark) document.documentElement.classList.add('dark');
-		</script>
-		<meta charset='UTF-8' />
-		<meta name='viewport' content='width=device-width, initial-scale=1' />
-		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-		
-		<!-- SEO Meta Tags -->
-		<title>Cherrypick - Jasa Pembuatan Website Profesional | Mudah & Cepat</title>
-		<meta name='description' content='Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau mulai Rp 150.000/bulan, desain modern, SEO friendly, dan siap pakai. Konsultasi gratis!' />
-		<meta name='keywords' content='jasa pembuatan website, website profesional, jasa website murah, website UMKM, website company profile, jasa web design Indonesia' />
-		<link rel='canonical' href='https://id.cherrypick.id/' />
-		<link rel='alternate' hreflang='id' href='https://id.cherrypick.id/' />
-		<link rel='alternate' hreflang='x-default' href='https://id.cherrypick.id/' />
+<html lang="id" class="scroll-smooth">
+  <head>
+    <script is:inline>
+      const theme = localStorage.getItem("theme") || "system";
+      const isDark =
+        theme === "dark" ||
+        (theme === "system" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches);
+      if (isDark) document.documentElement.classList.add("dark");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-		<!-- Google Search Console Verification -->
-		<!-- TODO: Replace [GSC_VERIFICATION_CODE] with your actual code from GSC > Add Property > HTML Tag -->
-		<!-- <meta name='google-site-verification' content='[GSC_VERIFICATION_CODE]' /> -->
+    <!-- SEO Meta Tags -->
+    <title>
+      Cherrypick - Jasa Pembuatan Website Profesional | Mudah & Cepat
+    </title>
+    <meta
+      name="description"
+      content="Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau mulai Rp 150.000/bulan, desain modern, SEO friendly, dan siap pakai. Konsultasi gratis!"
+    />
+    <meta
+      name="keywords"
+      content="jasa pembuatan website, website profesional, jasa website murah, website UMKM, website company profile, jasa web design Indonesia"
+    />
+    <link rel="canonical" href="https://id.cherrypick.id/" />
+    <link rel="alternate" hreflang="id" href="https://id.cherrypick.id/" />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://id.cherrypick.id/"
+    />
 
-		<!-- Open Graph / Facebook -->
-		<meta property='og:type' content='website' />
-		<meta property='og:url' content='https://id.cherrypick.id/' />
-		<meta property='og:title' content='Cherrypick - Jasa Pembuatan Website Profesional | Mudah & Cepat' />
-		<meta property='og:description' content='Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau mulai Rp 150.000/bulan, desain modern, SEO friendly, dan siap pakai.' />
-		<meta property='og:image' content='https://id.cherrypick.id/og-image.jpg' />
-		<meta property='og:locale' content='id_ID' />
-		<meta property='og:site_name' content='Cherrypick Studio' />
+    <!-- Google Search Console Verification -->
+    <meta
+      name="google-site-verification"
+      content="qKVanX9wpzHxIonFbfJ19kyUQERD6iQGc_5D7atoVn0"
+    />
 
-		<!-- Twitter Card -->
-		<meta name='twitter:card' content='summary_large_image' />
-		<meta name='twitter:url' content='https://id.cherrypick.id/' />
-		<meta name='twitter:title' content='Cherrypick - Jasa Pembuatan Website Profesional' />
-		<meta name='twitter:description' content='Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau, desain modern, SEO friendly.' />
-		<meta name='twitter:image' content='https://id.cherrypick.id/og-image.jpg' />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://id.cherrypick.id/" />
+    <meta
+      property="og:title"
+      content="Cherrypick - Jasa Pembuatan Website Profesional | Mudah & Cepat"
+    />
+    <meta
+      property="og:description"
+      content="Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau mulai Rp 150.000/bulan, desain modern, SEO friendly, dan siap pakai."
+    />
+    <meta property="og:image" content="https://id.cherrypick.id/og-image.jpg" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Cherrypick Studio" />
 
-		<!-- Additional Meta -->
-		<meta name='theme-color' content='#C42026' />
-		<meta name='robots' content='index, follow' />
-		<meta http-equiv='content-language' content='id' />
-		<meta name='author' content='Cherrypick Studio' />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://id.cherrypick.id/" />
+    <meta
+      name="twitter:title"
+      content="Cherrypick - Jasa Pembuatan Website Profesional"
+    />
+    <meta
+      name="twitter:description"
+      content="Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau, desain modern, SEO friendly."
+    />
+    <meta
+      name="twitter:image"
+      content="https://id.cherrypick.id/og-image.jpg"
+    />
 
-		<!-- Preconnect to external domains -->
-		<link rel='preconnect' href='https://maps.app.goo.gl' crossorigin />
-		<link rel='preconnect' href='https://www.googletagmanager.com' crossorigin />
-		<link rel='preconnect' href='https://connect.facebook.net' crossorigin />
-		<link rel='preconnect' href='https://www.facebook.com' crossorigin />
-		
-		<!-- Google tag (gtag.js) -->
-		<script async src='https://www.googletagmanager.com/gtag/js?id=G-ZZSP9JYL3P'></script>
-		<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-ZZSP9JYL3P');
-		</script>
-		<!-- End Google tag -->
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#C42026" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="content-language" content="id" />
+    <meta name="author" content="Cherrypick Studio" />
 
-		<!-- Meta Pixel Code -->
-		<script is:inline>
-			!function(f,b,e,v,n,t,s)
-			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-			n.queue=[];t=b.createElement(e);t.async=!0;
-			t.src=v;s=b.getElementsByTagName(e)[0];
-			s.parentNode.insertBefore(t,s)}(window, document,'script',
-			'https://connect.facebook.net/en_US/fbevents.js');
-			fbq('init', '1993581981585697');
-			fbq('track', 'PageView');
-		</script>
-		<!-- End Meta Pixel Code -->
-		
-		<!-- Structured Data - LocalBusiness -->
-		<script type='application/ld+json' is:inline>
-			{
-				"@context": "https://schema.org",
-				"@type": "LocalBusiness",
-				"@id": "https://id.cherrypick.id/#business",
-				"name": "Cherrypick Studio",
-				"image": "https://id.cherrypick.id/og-image.jpg",
-				"description": "Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan dengan harga terjangkau dan desain modern",
-				"address": {
-					"@type": "PostalAddress",
-					"addressLocality": "Malang",
-					"addressRegion": "East Java",
-					"addressCountry": "ID"
-				},
-				"geo": {
-					"@type": "GeoCoordinates",
-					"latitude": -7.9666,
-					"longitude": 112.6326
-				},
-				"openingHoursSpecification": [
-					{
-						"@type": "OpeningHoursSpecification",
-						"dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-						"opens": "09:00",
-						"closes": "18:00"
-					}
-				],
-				"areaServed": [
-					{"@type": "City", "name": "Malang"},
-					{"@type": "State", "name": "Jawa Timur"},
-					{"@type": "Country", "name": "Indonesia"}
-				],
-				"telephone": "+6282326546380",
-				"email": "hello@cherrypick.id",
-				"url": "https://id.cherrypick.id",
-				"priceRange": "Rp 150.000 - Rp 4.500.000",
-				"sameAs": [
-					"https://www.facebook.com/cherrypickid.studio",
-					"https://www.instagram.com/cherrypick.studioid/",
-					"https://www.linkedin.com/company/cherrypick-studio/",
-					"https://www.behance.net/cherrypick-studio",
-					"https://dribbble.com/cherrypick-studio"
-				]
-			}
-		</script>
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://maps.app.goo.gl" crossorigin />
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
+    <link rel="preconnect" href="https://www.facebook.com" crossorigin />
 
-		<!-- Structured Data - Organization -->
-		<script type='application/ld+json' is:inline>
-			{
-				"@context": "https://schema.org",
-				"@type": "Organization",
-				"@id": "https://id.cherrypick.id/#organization",
-				"name": "Cherrypick Studio",
-				"url": "https://id.cherrypick.id",
-				"logo": {
-					"@type": "ImageObject",
-					"url": "https://id.cherrypick.id/favicon.svg"
-				}
-			}
-		</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZSP9JYL3P"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-ZZSP9JYL3P");
+    </script>
+    <!-- End Google tag -->
 
-		<!-- Structured Data - WebSite -->
-		<script type='application/ld+json' is:inline>
-			{
-				"@context": "https://schema.org",
-				"@type": "WebSite",
-				"@id": "https://id.cherrypick.id/#website",
-				"url": "https://id.cherrypick.id",
-				"name": "Cherrypick Studio",
-				"publisher": {
-					"@id": "https://id.cherrypick.id/#organization"
-				}
-			}
-		</script>
-		
-		<!-- Structured Data - FAQPage -->
-		<script type='application/ld+json' is:inline>
-			{
-				"@context": "https://schema.org",
-				"@type": "FAQPage",
-				"mainEntity": [
-					{
-						"@type": "Question",
-						"name": "Berapa lama waktu pengerjaan website?",
-						"acceptedAnswer": {
-							"@type": "Answer",
-							"text": "Waktu pengerjaan website bervariasi tergantung kompleksitas proyek. Untuk website landing page sederhana membutuhkan 3-5 hari kerja, website company profile 1-2 minggu, dan untuk website e-commerce atau custom 2-4 minggu."
-						}
-					},
-					{
-						"@type": "Question",
-						"name": "Apakah bisa request revisi setelah website jadi?",
-						"acceptedAnswer": {
-							"@type": "Answer",
-							"text": "Tentu bisa! Kami menyediakan 3x revisi gratis setelah website selesai. Untuk revisi tambahan atau perubahan besar, akan dikenakan biaya tambahan sesuai dengan scope pekerjaan."
-						}
-					},
-					{
-						"@type": "Question",
-						"name": "Apakah termasuk domain dan hosting?",
-						"acceptedAnswer": {
-							"@type": "Answer",
-							"text": "Untuk paket tahunan, domain .com dan hosting sudah termasuk dalam harga. Untuk paket bulanan, Anda perlu menyediakan hosting sendiri atau bisa menggunakan layanan hosting kami dengan biaya terpisah."
-						}
-					},
-					{
-						"@type": "Question",
-						"name": "Bagaimana sistem pembayarannya?",
-						"acceptedAnswer": {
-							"@type": "Answer",
-							"text": "Pembayaran dilakukan dengan sistem DP 50% di awal dan pelunasan 50% setelah website selesai. Kami menerima transfer bank, e-wallet, dan kartu kredit."
-						}
-					},
-					{
-						"@type": "Question",
-						"name": "Apakah website-nya responsive untuk mobile?",
-						"acceptedAnswer": {
-							"@type": "Answer",
-							"text": "Ya, semua website yang kami buat sudah responsive dan mobile-friendly. Website akan tampil optimal di semua perangkat termasuk smartphone, tablet, dan desktop."
-						}
-					},
-					{
-						"@type": "Question",
-						"name": "Apakah ada layanan maintenance setelah website jadi?",
-						"acceptedAnswer": {
-							"@type": "Answer",
-							"text": "Kami menyediakan layanan maintenance bulanan yang mencakup update keamanan, backup rutin, monitoring uptime, dan support teknis. Harga maintenance mulai dari Rp 100.000/bulan."
-						}
-					}
-				]
-			}
-		</script>
+    <!-- Meta Pixel Code -->
+    <script is:inline>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "1993581981585697");
+      fbq("track", "PageView");
+    </script>
+    <!-- End Meta Pixel Code -->
 
-		<!-- GA4 Scroll Depth Tracking -->
-		<script is:inline>
-			(function () {
-				var milestones = [25, 50, 75, 90];
-				var reached = {};
-				function onScroll() {
-					var scrollTop = window.scrollY || document.documentElement.scrollTop;
-					var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-					if (docHeight <= 0) return;
-					var pct = Math.round((scrollTop / docHeight) * 100);
-					milestones.forEach(function (m) {
-						if (!reached[m] && pct >= m) {
-							reached[m] = true;
-							if (typeof gtag === 'function') {
-								gtag('event', 'scroll_depth', { percent_scrolled: m });
-							}
-						}
-					});
-				}
-				window.addEventListener('scroll', onScroll, { passive: true });
-			})();
-		</script>
+    <!-- Structured Data - LocalBusiness -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://id.cherrypick.id/#business",
+        "name": "Cherrypick Studio",
+        "image": "https://id.cherrypick.id/og-image.jpg",
+        "description": "Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan dengan harga terjangkau dan desain modern",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Malang",
+          "addressRegion": "East Java",
+          "addressCountry": "ID"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -7.9666,
+          "longitude": 112.6326
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ],
+        "areaServed": [
+          { "@type": "City", "name": "Malang" },
+          { "@type": "State", "name": "Jawa Timur" },
+          { "@type": "Country", "name": "Indonesia" }
+        ],
+        "telephone": "+6282326546380",
+        "email": "hello@cherrypick.id",
+        "url": "https://id.cherrypick.id",
+        "priceRange": "Rp 150.000 - Rp 4.500.000",
+        "sameAs": [
+          "https://www.facebook.com/cherrypickid.studio",
+          "https://www.instagram.com/cherrypick.studioid/",
+          "https://www.linkedin.com/company/cherrypick-studio/",
+          "https://www.behance.net/cherrypick-studio",
+          "https://dribbble.com/cherrypick-studio"
+        ]
+      }
+    </script>
 
-		<!-- Cloudflare Web Analytics -->
-		<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7187a12ab3084bbb92ace072d76d9c76"}'></script>
-		<!-- End Cloudflare Web Analytics -->
-	</head>
-	<body
-		class='min-h-screen flex flex-col bg-white dark:bg-[#282828] text-gray-900 dark:text-gray-100'
-	>
-		<noscript>
-			<img
-				height='1'
-				width='1'
-				style='display:none'
-				src='https://www.facebook.com/tr?id=1993581981585697&ev=PageView&noscript=1'
-				alt=''
-			/>
-		</noscript>
-		<Navbar />
-		<main class='flex flex-col gap-[120px]'>
-			<SectionHero />
-			<section id='about'>
-				<SectionAboutUs />
-			</section>
-			<div class='w-full h-[1px] bg-[#D9D9D9] mx-auto'></div>
-			<section id='process'>
-				<SectionTime />
-			</section>
-			<SectionClient />
-			<div class='w-full h-[1px] bg-[#D9D9D9] mx-auto'></div>
-			<section id='portfolio'>
-				<SectionPorto />
-			</section>
-			<div class='w-full h-[1px] bg-[#D9D9D9] mx-auto'></div>
-			<section id='pricing'>
-				<SectionPrice />
-			</section>
-			<SectionProjects />
-			<SectionReview />
-			<div class='w-full h-[1px] bg-[#D9D9D9] mx-auto'></div>
-			<section id='faq'>
-				<SectionFAQ />
-			</section>
-			<SectionBanner />
-			<Footer />
-		</main>
-	</body>
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://id.cherrypick.id/#organization",
+        "name": "Cherrypick Studio",
+        "url": "https://id.cherrypick.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://id.cherrypick.id/favicon.svg"
+        }
+      }
+    </script>
 
-	<style>
-		html,
-		body {
-			margin: 0;
-			width: 100%;
-			height: 100%;
-		}
-		/* Offset scroll target so fixed navbar doesn’t cover section */
-		#pricing,
-		#portfolio,
-		#about,
-		#process,
-		#hero,
-		#faq {
-			scroll-margin-top: 5.5rem;
-		}
-	</style>
+    <!-- Structured Data - WebSite -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://id.cherrypick.id/#website",
+        "url": "https://id.cherrypick.id",
+        "name": "Cherrypick Studio",
+        "publisher": {
+          "@id": "https://id.cherrypick.id/#organization"
+        }
+      }
+    </script>
+
+    <!-- Structured Data - FAQPage -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Berapa lama waktu pengerjaan website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Waktu pengerjaan website bervariasi tergantung kompleksitas proyek. Untuk website landing page sederhana membutuhkan 3-5 hari kerja, website company profile 1-2 minggu, dan untuk website e-commerce atau custom 2-4 minggu."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Apakah bisa request revisi setelah website jadi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tentu bisa! Kami menyediakan 3x revisi gratis setelah website selesai. Untuk revisi tambahan atau perubahan besar, akan dikenakan biaya tambahan sesuai dengan scope pekerjaan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Apakah termasuk domain dan hosting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Untuk paket tahunan, domain .com dan hosting sudah termasuk dalam harga. Untuk paket bulanan, Anda perlu menyediakan hosting sendiri atau bisa menggunakan layanan hosting kami dengan biaya terpisah."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Bagaimana sistem pembayarannya?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pembayaran dilakukan dengan sistem DP 50% di awal dan pelunasan 50% setelah website selesai. Kami menerima transfer bank, e-wallet, dan kartu kredit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Apakah website-nya responsive untuk mobile?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ya, semua website yang kami buat sudah responsive dan mobile-friendly. Website akan tampil optimal di semua perangkat termasuk smartphone, tablet, dan desktop."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Apakah ada layanan maintenance setelah website jadi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kami menyediakan layanan maintenance bulanan yang mencakup update keamanan, backup rutin, monitoring uptime, dan support teknis. Harga maintenance mulai dari Rp 100.000/bulan."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- GA4 Scroll Depth Tracking -->
+    <script is:inline>
+      (function () {
+        var milestones = [25, 50, 75, 90];
+        var reached = {};
+        function onScroll() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          if (docHeight <= 0) return;
+          var pct = Math.round((scrollTop / docHeight) * 100);
+          milestones.forEach(function (m) {
+            if (!reached[m] && pct >= m) {
+              reached[m] = true;
+              if (typeof gtag === "function") {
+                gtag("event", "scroll_depth", { percent_scrolled: m });
+              }
+            }
+          });
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+      })();
+    </script>
+
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "7187a12ab3084bbb92ace072d76d9c76"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+  </head>
+  <body
+    class="min-h-screen flex flex-col bg-white dark:bg-[#282828] text-gray-900 dark:text-gray-100"
+  >
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1993581981585697&ev=PageView&noscript=1"
+        alt=""
+      />
+    </noscript>
+    <Navbar />
+    <main class="flex flex-col gap-[120px]">
+      <SectionHero />
+      <section id="about">
+        <SectionAboutUs />
+      </section>
+      <div class="w-full h-[1px] bg-[#D9D9D9] mx-auto"></div>
+      <section id="process">
+        <SectionTime />
+      </section>
+      <SectionClient />
+      <div class="w-full h-[1px] bg-[#D9D9D9] mx-auto"></div>
+      <section id="portfolio">
+        <SectionPorto />
+      </section>
+      <div class="w-full h-[1px] bg-[#D9D9D9] mx-auto"></div>
+      <section id="pricing">
+        <SectionPrice />
+      </section>
+      <SectionProjects />
+      <SectionReview />
+      <div class="w-full h-[1px] bg-[#D9D9D9] mx-auto"></div>
+      <section id="faq">
+        <SectionFAQ />
+      </section>
+      <SectionBanner />
+      <Footer />
+    </main>
+  </body>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+    /* Offset scroll target so fixed navbar doesn’t cover section */
+    #pricing,
+    #portfolio,
+    #about,
+    #process,
+    #hero,
+    #faq {
+      scroll-margin-top: 5.5rem;
+    }
+  </style>
 </html>
