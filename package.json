@@ -1,5 +1,6 @@
 {
   "name": "cherrypick-id",
+  "version": "1.1.0",
   "type": "module",
   "description": "Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau, desain modern, SEO friendly.",
   "keywords": [
@@ -23,7 +24,6 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

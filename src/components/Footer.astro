@@ -1,7 +1,9 @@
 ---
 import logo from "../assets/ic-logo-wording.svg";
 import logoWhite from "../assets/ic-logo-wording-white.svg";
-import { MAPS_URL, whatsappUrl } from "../config";
+import { MAPS_URL, WHATSAPP_NUMBER, whatsappUrl } from "../config";
+
+const formattedPhone = `+${WHATSAPP_NUMBER.slice(0,2)} ${WHATSAPP_NUMBER.slice(2,5)}-${WHATSAPP_NUMBER.slice(5,9)}-${WHATSAPP_NUMBER.slice(9)}`;
 const currentYear = new Date().getFullYear();
 ---
 
@@ -13,7 +15,7 @@ const currentYear = new Date().getFullYear();
       <div class="flex flex-col space-y-6">
         <div class="flex w-full justify-between">
           <h2 class="text-xl font-bold text-[#1A1A1A] dark:text-white">
-            Jasa Pembuatan Website Profesional Mudah & Cepat
+            Cherrypick Studio — Mitra Website Bisnis Anda
           </h2>
           <img
             src={logo.src}
@@ -80,7 +82,7 @@ const currentYear = new Date().getFullYear();
               rel="noopener noreferrer"
               class="hover:text-[#C42026] dark:hover:text-[#FFCA00] transition-colors"
             >
-              +62 822-1833-9682
+              {formattedPhone}
             </a>
           </div>
           <div class="flex items-center gap-2">

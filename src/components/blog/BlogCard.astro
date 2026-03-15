@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, image, category, tags } = post.data;
+const readingTime = Math.ceil(post.body.split(/\s+/).length / 200);
+const formattedDate = pubDate.toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<article class='bg-white dark:bg-[#1A1A1A] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-[#EBEBEB] dark:border-[#333]'>
+	<a href={`/blog/${post.slug}`} class='block'>
+		<img
+			src={image.url}
+			alt={image.alt}
+			class='w-full object-cover aspect-video'
+			width='400'
+			height='225'
+			loading='lazy'
+		/>
+	</a>
+	<div class='p-6'>
+		<span class='inline-block bg-[#FFF5F6] dark:bg-[#3a1a1a] text-[#C42026] text-xs font-medium px-3 py-1 rounded-full mb-3'>
+			{category}
+		</span>
+		<h2 class='text-lg font-bold text-[#1A1A1A] dark:text-[#FEFEFE] mb-2 leading-snug'>
+			<a href={`/blog/${post.slug}`} class='hover:text-[#C42026] dark:hover:text-[#C42026] transition-colors'>
+				{title}
+			</a>
+		</h2>
+		<p class='text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2'>{description}</p>
+		<div class='flex items-center justify-between text-xs text-gray-400 dark:text-gray-500'>
+			<time datetime={pubDate.toISOString()}>{formattedDate}</time>
+			<span>{readingTime} menit baca</span>
+		</div>
+	</div>
+</article>

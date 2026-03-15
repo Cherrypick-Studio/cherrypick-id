@@ -32,32 +32,37 @@ import SectionBanner from '../components/Section/SectionBanner.astro';
 		<title>Cherrypick - Jasa Pembuatan Website Profesional | Mudah & Cepat</title>
 		<meta name='description' content='Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau mulai Rp 150.000/bulan, desain modern, SEO friendly, dan siap pakai. Konsultasi gratis!' />
 		<meta name='keywords' content='jasa pembuatan website, website profesional, jasa website murah, website UMKM, website company profile, jasa web design Indonesia' />
-		<link rel='canonical' href='https://cherrypick.id/' />
-		
+		<link rel='canonical' href='https://id.cherrypick.id/' />
+		<link rel='alternate' hreflang='id' href='https://id.cherrypick.id/' />
+		<link rel='alternate' hreflang='x-default' href='https://id.cherrypick.id/' />
+
+		<!-- Google Search Console Verification -->
+		<!-- TODO: Replace [GSC_VERIFICATION_CODE] with your actual code from GSC > Add Property > HTML Tag -->
+		<!-- <meta name='google-site-verification' content='[GSC_VERIFICATION_CODE]' /> -->
+
 		<!-- Open Graph / Facebook -->
 		<meta property='og:type' content='website' />
-		<meta property='og:url' content='https://cherrypick.id/' />
+		<meta property='og:url' content='https://id.cherrypick.id/' />
 		<meta property='og:title' content='Cherrypick - Jasa Pembuatan Website Profesional | Mudah & Cepat' />
 		<meta property='og:description' content='Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau mulai Rp 150.000/bulan, desain modern, SEO friendly, dan siap pakai.' />
-		<meta property='og:image' content='https://cherrypick.id/og-image.jpg' />
+		<meta property='og:image' content='https://id.cherrypick.id/og-image.jpg' />
 		<meta property='og:locale' content='id_ID' />
 		<meta property='og:site_name' content='Cherrypick Studio' />
-		
+
 		<!-- Twitter Card -->
 		<meta name='twitter:card' content='summary_large_image' />
-		<meta name='twitter:url' content='https://cherrypick.id/' />
+		<meta name='twitter:url' content='https://id.cherrypick.id/' />
 		<meta name='twitter:title' content='Cherrypick - Jasa Pembuatan Website Profesional' />
 		<meta name='twitter:description' content='Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan. Harga terjangkau, desain modern, SEO friendly.' />
-		<meta name='twitter:image' content='https://cherrypick.id/og-image.jpg' />
-		
+		<meta name='twitter:image' content='https://id.cherrypick.id/og-image.jpg' />
+
 		<!-- Additional Meta -->
 		<meta name='theme-color' content='#C42026' />
 		<meta name='robots' content='index, follow' />
-		<meta name='language' content='Indonesian' />
+		<meta http-equiv='content-language' content='id' />
 		<meta name='author' content='Cherrypick Studio' />
-		
+
 		<!-- Preconnect to external domains -->
-		<link rel='preconnect' href='https://wa.me' crossorigin />
 		<link rel='preconnect' href='https://maps.app.goo.gl' crossorigin />
 		<link rel='preconnect' href='https://www.googletagmanager.com' crossorigin />
 		<link rel='preconnect' href='https://connect.facebook.net' crossorigin />
@@ -93,8 +98,9 @@ import SectionBanner from '../components/Section/SectionBanner.astro';
 			{
 				"@context": "https://schema.org",
 				"@type": "LocalBusiness",
+				"@id": "https://id.cherrypick.id/#business",
 				"name": "Cherrypick Studio",
-				"image": "https://id.cherrypick.studio/og-image.jpg",
+				"image": "https://id.cherrypick.id/og-image.jpg",
 				"description": "Jasa pembuatan website profesional untuk bisnis UMKM hingga perusahaan dengan harga terjangkau dan desain modern",
 				"address": {
 					"@type": "PostalAddress",
@@ -102,9 +108,27 @@ import SectionBanner from '../components/Section/SectionBanner.astro';
 					"addressRegion": "East Java",
 					"addressCountry": "ID"
 				},
-				"telephone": "+6282218339682",
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": -7.9666,
+					"longitude": 112.6326
+				},
+				"openingHoursSpecification": [
+					{
+						"@type": "OpeningHoursSpecification",
+						"dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+						"opens": "09:00",
+						"closes": "18:00"
+					}
+				],
+				"areaServed": [
+					{"@type": "City", "name": "Malang"},
+					{"@type": "State", "name": "Jawa Timur"},
+					{"@type": "Country", "name": "Indonesia"}
+				],
+				"telephone": "+6282326546380",
 				"email": "hello@cherrypick.id",
-				"url": "https://id.cherrypick.studio",
+				"url": "https://id.cherrypick.id",
 				"priceRange": "Rp 150.000 - Rp 4.500.000",
 				"sameAs": [
 					"https://www.facebook.com/cherrypickid.studio",
@@ -113,6 +137,35 @@ import SectionBanner from '../components/Section/SectionBanner.astro';
 					"https://www.behance.net/cherrypick-studio",
 					"https://dribbble.com/cherrypick-studio"
 				]
+			}
+		</script>
+
+		<!-- Structured Data - Organization -->
+		<script type='application/ld+json' is:inline>
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"@id": "https://id.cherrypick.id/#organization",
+				"name": "Cherrypick Studio",
+				"url": "https://id.cherrypick.id",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://id.cherrypick.id/favicon.svg"
+				}
+			}
+		</script>
+
+		<!-- Structured Data - WebSite -->
+		<script type='application/ld+json' is:inline>
+			{
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				"@id": "https://id.cherrypick.id/#website",
+				"url": "https://id.cherrypick.id",
+				"name": "Cherrypick Studio",
+				"publisher": {
+					"@id": "https://id.cherrypick.id/#organization"
+				}
 			}
 		</script>
 		
@@ -172,6 +225,29 @@ import SectionBanner from '../components/Section/SectionBanner.astro';
 					}
 				]
 			}
+		</script>
+
+		<!-- GA4 Scroll Depth Tracking -->
+		<script is:inline>
+			(function () {
+				var milestones = [25, 50, 75, 90];
+				var reached = {};
+				function onScroll() {
+					var scrollTop = window.scrollY || document.documentElement.scrollTop;
+					var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+					if (docHeight <= 0) return;
+					var pct = Math.round((scrollTop / docHeight) * 100);
+					milestones.forEach(function (m) {
+						if (!reached[m] && pct >= m) {
+							reached[m] = true;
+							if (typeof gtag === 'function') {
+								gtag('event', 'scroll_depth', { percent_scrolled: m });
+							}
+						}
+					});
+				}
+				window.addEventListener('scroll', onScroll, { passive: true });
+			})();
 		</script>
 
 		<!-- Cloudflare Web Analytics -->

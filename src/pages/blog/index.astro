@@ -1,0 +1,135 @@
+---
+import { getCollection } from 'astro:content';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import BlogCard from '../../components/blog/BlogCard.astro';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const categories = ['Semua', ...new Set(allPosts.map((p) => p.data.category))];
+---
+
+<!doctype html>
+<html lang='id' class='scroll-smooth'>
+	<head>
+		<script is:inline>
+			const theme = localStorage.getItem('theme') || 'system';
+			const isDark =
+				theme === 'dark' ||
+				(theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+			if (isDark) document.documentElement.classList.add('dark');
+		</script>
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+
+		<title>Blog — Tips Website & Digital Marketing | Cherrypick Studio</title>
+		<meta name='description' content='Artikel dan panduan seputar pembuatan website, SEO, digital marketing, dan pengembangan bisnis online untuk UMKM Indonesia.' />
+		<link rel='canonical' href='https://id.cherrypick.id/blog' />
+		<link rel='alternate' hreflang='id' href='https://id.cherrypick.id/blog' />
+		<link rel='alternate' hreflang='x-default' href='https://id.cherrypick.id/blog' />
+
+		<meta property='og:type' content='website' />
+		<meta property='og:url' content='https://id.cherrypick.id/blog' />
+		<meta property='og:title' content='Blog — Tips Website & Digital Marketing | Cherrypick Studio' />
+		<meta property='og:description' content='Artikel dan panduan seputar pembuatan website, SEO, digital marketing, dan pengembangan bisnis online untuk UMKM Indonesia.' />
+		<meta property='og:image' content='https://id.cherrypick.id/og-image.jpg' />
+		<meta property='og:locale' content='id_ID' />
+		<meta property='og:site_name' content='Cherrypick Studio' />
+
+		<meta name='theme-color' content='#C42026' />
+		<meta name='robots' content='index, follow' />
+		<meta http-equiv='content-language' content='id' />
+
+		<link rel='preconnect' href='https://www.googletagmanager.com' crossorigin />
+		<script is:inline async src='https://www.googletagmanager.com/gtag/js?id=G-ZZSP9JYL3P'></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-ZZSP9JYL3P');
+		</script>
+
+		<script type='application/ld+json' is:inline>
+			{
+				"@context": "https://schema.org",
+				"@type": "Blog",
+				"name": "Blog Cherrypick Studio",
+				"description": "Tips dan panduan seputar website, SEO, dan digital marketing untuk UMKM Indonesia",
+				"url": "https://id.cherrypick.id/blog",
+				"publisher": {
+					"@id": "https://id.cherrypick.id/#organization"
+				}
+			}
+		</script>
+	</head>
+	<body class='min-h-screen flex flex-col bg-white dark:bg-[#282828] text-gray-900 dark:text-gray-100'>
+		<Navbar />
+		<main class='flex-1 max-w-[1440px] mx-auto w-full px-4 sm:px-6 lg:px-8 pt-32 pb-20'>
+			<!-- Header -->
+			<div class='text-center mb-12'>
+				<h1 class='text-[40px] font-bold text-[#1A1A1A] dark:text-[#FEFEFE] mb-4'>
+					Blog Cherrypick Studio
+				</h1>
+				<p class='text-lg text-[#666666] dark:text-[#BBBBBB] max-w-[600px] mx-auto'>
+					Tips, panduan, dan wawasan seputar website, SEO, dan digital marketing untuk bisnis Indonesia.
+				</p>
+			</div>
+
+			<!-- Category Filter -->
+			<div class='flex flex-wrap justify-center gap-3 mb-12' id='category-filter'>
+				{categories.map((cat) => (
+					<button
+						data-category={cat}
+						class={`px-4 py-2 rounded-full text-sm font-medium transition-colors border ${cat === 'Semua' ? 'bg-[#C42026] text-white border-[#C42026]' : 'bg-white dark:bg-[#1A1A1A] text-gray-600 dark:text-gray-300 border-[#EBEBEB] dark:border-[#333] hover:border-[#C42026] hover:text-[#C42026]'}`}
+					>
+						{cat}
+					</button>
+				))}
+			</div>
+
+			<!-- Posts Grid -->
+			{posts.length === 0 ? (
+				<div class='text-center py-20 text-gray-400 dark:text-gray-500'>
+					<p class='text-xl'>Belum ada artikel. Pantau terus!</p>
+				</div>
+			) : (
+				<div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' id='posts-grid'>
+					{posts.map((post) => (
+						<div data-post-category={post.data.category}>
+							<BlogCard post={post} />
+						</div>
+					))}
+				</div>
+			)}
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<script>
+	const buttons = document.querySelectorAll<HTMLButtonElement>('#category-filter button');
+	const cards = document.querySelectorAll<HTMLElement>('#posts-grid [data-post-category]');
+
+	buttons.forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const selected = btn.dataset.category;
+
+			buttons.forEach((b) => {
+				b.classList.remove('bg-[#C42026]', 'text-white', 'border-[#C42026]');
+				b.classList.add('bg-white', 'dark:bg-[#1A1A1A]', 'text-gray-600', 'dark:text-gray-300', 'border-[#EBEBEB]', 'dark:border-[#333]');
+			});
+			btn.classList.add('bg-[#C42026]', 'text-white', 'border-[#C42026]');
+			btn.classList.remove('bg-white', 'dark:bg-[#1A1A1A]', 'text-gray-600', 'dark:text-gray-300', 'border-[#EBEBEB]', 'dark:border-[#333]');
+
+			cards.forEach((card) => {
+				if (selected === 'Semua' || card.dataset.postCategory === selected) {
+					card.style.display = '';
+				} else {
+					card.style.display = 'none';
+				}
+			});
+		});
+	});
+</script>

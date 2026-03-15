@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C42026;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B0000;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1.5" fill="rgba(255,255,255,0.12)" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#dots)" />
+
+  <!-- Decorative circles -->
+  <circle cx="1050" cy="120" r="180" fill="rgba(255,255,255,0.05)" />
+  <circle cx="150" cy="520" r="140" fill="rgba(255,255,255,0.05)" />
+  <circle cx="1080" cy="500" r="90" fill="rgba(255,255,255,0.07)" />
+
+  <!-- Yellow accent bar -->
+  <rect x="80" y="270" width="6" height="90" rx="3" fill="#FFCA00" />
+
+  <!-- Main tagline -->
+  <text x="110" y="328" font-family="'Segoe UI', Arial, sans-serif" font-size="52" font-weight="700" fill="white" letter-spacing="-1">Jasa Pembuatan Website</text>
+  <text x="110" y="392" font-family="'Segoe UI', Arial, sans-serif" font-size="52" font-weight="700" fill="#FFCA00" letter-spacing="-1">Profesional</text>
+
+  <!-- Divider -->
+  <rect x="110" y="430" width="120" height="3" rx="1.5" fill="rgba(255,255,255,0.4)" />
+
+  <!-- Brand name -->
+  <text x="110" y="490" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="400" fill="rgba(255,255,255,0.85)" letter-spacing="2">CHERRYPICK STUDIO</text>
+
+  <!-- Cherry icon (simplified) -->
+  <circle cx="1060" cy="315" r="50" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)" stroke-width="2" />
+  <circle cx="1040" cy="330" r="18" fill="rgba(255,202,0,0.9)" />
+  <circle cx="1080" cy="310" r="18" fill="rgba(255,202,0,0.9)" />
+  <path d="M1058 312 Q1060 280 1075 270" stroke="rgba(255,255,255,0.7)" stroke-width="3" fill="none" stroke-linecap="round" />
+  <path d="M1058 312 Q1050 290 1040 312" stroke="rgba(255,255,255,0.7)" stroke-width="3" fill="none" stroke-linecap="round" />
+</svg>
