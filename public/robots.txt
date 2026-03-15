@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://id.cherrypick.id/sitemap-index.xml
+Sitemap: https://id.cherrypick.studio/sitemap-index.xml

@@ -6,6 +6,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://id.cherrypick.id',
+	site: 'https://id.cherrypick.studio',
 	integrations: [react(), tailwind(), sitemap()],
 });

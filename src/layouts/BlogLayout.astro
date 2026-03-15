@@ -15,7 +15,7 @@ const readingTime = Math.ceil(post.body.split(/\s+/).length / 200);
 const formattedPubDate = pubDate.toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
 const isoDate = pubDate.toISOString();
 const isoUpdated = updatedDate?.toISOString() ?? isoDate;
-const canonicalUrl = `https://id.cherrypick.id/blog/${post.slug}`;
+const canonicalUrl = `https://id.cherrypick.studio/blog/${post.slug}`;
 const waUrl = whatsappUrlWithText('Halo Cherrypick, saya mau konsultasi website untuk bisnis saya.');
 
 const articleSchema = {
@@ -27,9 +27,9 @@ const articleSchema = {
 	author: { '@type': 'Organization', name: author },
 	publisher: {
 		'@type': 'Organization',
-		'@id': 'https://id.cherrypick.id/#organization',
+		'@id': 'https://id.cherrypick.studio/#organization',
 		name: 'Cherrypick Studio',
-		logo: { '@type': 'ImageObject', url: 'https://id.cherrypick.id/favicon.svg' },
+		logo: { '@type': 'ImageObject', url: 'https://id.cherrypick.studio/favicon.svg' },
 	},
 	datePublished: isoDate,
 	dateModified: isoUpdated,
@@ -40,8 +40,8 @@ const breadcrumbSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'BreadcrumbList',
 	itemListElement: [
-		{ '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://id.cherrypick.id/' },
-		{ '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://id.cherrypick.id/blog' },
+		{ '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://id.cherrypick.studio/' },
+		{ '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://id.cherrypick.studio/blog' },
 		{ '@type': 'ListItem', position: 3, name: title, item: canonicalUrl },
 	],
 };
