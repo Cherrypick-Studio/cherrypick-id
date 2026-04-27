@@ -1,0 +1,136 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import SectionTime from '../components/Section/SectionTime.astro';
+import SectionFAQ from '../components/Section/SectionFAQ.astro';
+import SectionBanner from '../components/Section/SectionBanner.astro';
+---
+
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <script is:inline>
+      const theme = localStorage.getItem("theme") || "system";
+      const isDark =
+        theme === "dark" ||
+        (theme === "system" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches);
+      if (isDark) document.documentElement.classList.add("dark");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>Cara Kami Kerja - Cherrypick Studio</title>
+    <meta
+      name="description"
+      content="Pelajari cara kerja Cherrypick Studio dalam membangun website profesional untuk bisnis Anda. Proses terencana, tepat waktu, dan sesuai kebutuhan."
+    />
+    <link rel="canonical" href="https://id.cherrypick.studio/how-we-work" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://id.cherrypick.studio/how-we-work" />
+    <meta property="og:title" content="Cara Kami Kerja - Cherrypick Studio" />
+    <meta
+      property="og:description"
+      content="Pelajari cara kerja Cherrypick Studio dalam membangun website profesional untuk bisnis Anda."
+    />
+    <meta property="og:image" content="https://id.cherrypick.studio/og-image.jpg" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Cherrypick Studio" />
+
+    <meta name="theme-color" content="#C42026" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="content-language" content="id" />
+    <meta name="author" content="Cherrypick Studio" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZSP9JYL3P"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-ZZSP9JYL3P");
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script is:inline>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "1993581981585697");
+      fbq("track", "PageView");
+    </script>
+
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "7187a12ab3084bbb92ace072d76d9c76"}'></script>
+  </head>
+  <body
+    class="min-h-screen flex flex-col bg-white dark:bg-[#282828] text-gray-900 dark:text-gray-100"
+  >
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1993581981585697&ev=PageView&noscript=1"
+        alt=""
+      />
+    </noscript>
+    <Navbar />
+    <main class="flex flex-col gap-[120px] mt-24">
+      <section id="process" class="pt-[100px]">
+        <SectionTime
+          title="Bagaimana cara kami bekerja untuk bisnis Anda?"
+          desc="Website Jadi Tepat Waktu & Terencana. Setiap tahap dikerjakan secara rapi agar hasil sesuai kebutuhan bisnis Anda."
+          showCta
+        />
+      </section>
+      <div class="w-full h-[1px] bg-[#D9D9D9] mx-auto"></div>
+      <section id="faq">
+        <SectionFAQ />
+      </section>
+      <SectionBanner />
+      <Footer />
+    </main>
+  </body>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #process,
+    #faq {
+      scroll-margin-top: 5.5rem;
+    }
+  </style>
+</html>
