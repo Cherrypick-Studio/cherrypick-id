@@ -27,7 +27,6 @@ const plans: PricingPlan[] = [
 			'WhatsApp integration',
 			'Domain .com atau .id',
 			'SSL certificate',
-			'SEO basic (meta tags, keywords)',
 			'2x revisi minor',
 			'Waktu pengerjaan: 3-7 hari'
 		],
@@ -59,7 +58,7 @@ const plans: PricingPlan[] = [
 			'Waktu pengerjaan: 2-3 minggu'
 		],
 		addOns: [
-			'Tambahan halaman (+Rp 75.000/halaman)',
+			'Tambahan halaman (+Rp 150.000/halaman)',
 			'Copywriting profesional (+Rp 100.000)',
 			'Blog post tambahan (+Rp 50.000/post)',
 			// 'Maintenance bulanan (+Rp 100.000/bulan)',
