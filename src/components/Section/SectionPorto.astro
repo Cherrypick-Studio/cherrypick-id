@@ -181,7 +181,7 @@ const aboutUsItems = [
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[56px]"
           id="porto-grid"
         >
-          {aboutUsItems.map((item, index) => (
+          {aboutUsItems.map((item) => (
             <div class="w-full h-fit flex flex-col gap-4 relative">
               <a
                 href={item.link}
@@ -244,13 +244,3 @@ const aboutUsItems = [
     )
   }
 </div>
-
-<script>
-  const btn = document.getElementById("porto-load-more");
-  btn?.addEventListener("click", () => {
-    document.querySelectorAll(".porto-hidden").forEach((el) => {
-      el.classList.remove("hidden", "porto-hidden");
-    });
-    btn.remove();
-  });
-</script>
