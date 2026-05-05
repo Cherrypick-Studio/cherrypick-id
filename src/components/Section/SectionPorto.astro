@@ -9,16 +9,82 @@ const { variant = "carousel" } = Astro.props;
 
 const aboutUsItems = [
   {
+    title: "Portal Berita & Media",
+    desc: "Cronicle",
+    image: "/clients/cronicle.jpg",
+    link: "https://dribbble.com/shots/27329956-Cronicle-News-Portal-Website",
+  },
+  {
+    title: "Travel Haji dan Umrah",
+    desc: "Safara Tour",
+    image: "/clients/safara-tour.jpg",
+    link: "https://www.instagram.com/p/DXsyBt9jeHx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
+    title: "Travel Kendaraan Mobil",
+    desc: "RuteKita",
+    image: "/clients/rutekita.jpg",
+    link: "https://www.instagram.com/p/DXsyBt9jeHx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
+    title: "Travel Liburan",
+    desc: "LangitRimba",
+    image: "/clients/langitrimba.jpg",
+    link: "https://www.instagram.com/p/DXapofJEdEP/?img_index=1",
+  },
+  {
+    title: "Kontraktor Bangunan",
+    desc: "Construxa",
+    image: "/clients/construxa.jpg",
+    link: "https://www.instagram.com/p/DXf2mnEDULr/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
+    title: "Logistic dan Port",
+    desc: "Trilink",
+    image: "/clients/trilink.jpg",
+    link: "https://dribbble.com/shots/26816399-Trilink-Logistic-Operational-Landing-Page",
+  },
+  {
+    title: "AI Chat",
+    desc: "Verve",
+    image: "/clients/verve.jpg",
+    link: "https://www.instagram.com/p/DRO-DMvkvq3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D",
+  },
+  {
+    title: "AI SaaS",
+    desc: "Velora",
+    image: "/clients/velora.jpg",
+    link: "https://www.instagram.com/p/DXnsdKLkWxo/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
     title: "Badan Amal & Zakat",
     desc: "Lazismu Kota Malang",
     image: "/clients/lazizmu.jpg",
     link: "https://www.lazismukotamalang.com/",
   },
   {
+    title: "Burger House",
+    desc: "BurgerCall",
+    image: "/clients/burgercall.jpg",
+    link: "https://www.instagram.com/p/DVKkAoGjW-q/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D",
+  },
+  {
     title: "Catering Nasi Tumpeng",
     desc: "Tumpeng Mini Jabodetabek & Bandung",
     image: "/clients/tumpengmini.jpg",
     link: "https://tumpengmini.com/",
+  },
+  {
+    title: "Crypto Exchange",
+    desc: "BlockWave",
+    image: "/clients/blockwave.jpg",
+    link: "https://www.instagram.com/p/DXsyBt9jeHx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
+    title: "Digital Agency",
+    desc: "Axelo",
+    image: "/clients/axelo.jpg",
+    link: "https://dribbble.com/shots/26313441-Axelo-Digital-Agency-Landing-Page",
   },
   {
     title: "Florist & Bunga",
@@ -39,6 +105,12 @@ const aboutUsItems = [
     link: "https://www.harwigadget.com/",
   },
   {
+    title: "Glamping Ground",
+    desc: "Timbercamp",
+    image: "/clients/timbercamp.jpg",
+    link: "https://dribbble.com/shots/26816399-Trilink-Logistic-Operational-Landing-Page",
+  },
+  {
     title: "Gym & Fitness",
     desc: "FitCore",
     image: "/clients/fitcore.jpg",
@@ -51,16 +123,22 @@ const aboutUsItems = [
     link: "https://www.instagram.com/p/DVdAQuUjrbT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
+    title: "HR Company",
+    desc: "Hero",
+    image: "/clients/hero.jpg",
+    link: "https://dribbble.com/shots/26268204-Hero-SaaS-HR-Management",
+  },
+  {
+    title: "Klinik Gigi (Dental Clinic)",
+    desc: "Dentova Care",
+    image: "/clients/dentova-care.jpg",
+    link: "https://www.instagram.com/p/DXDeeqkjZH7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
     title: "Konsultan Bisnis & Keuangan",
     desc: "Advico",
     image: "/clients/advico.jpg",
     link: "https://www.instagram.com/p/DXIoD6sDJIx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-  },
-  {
-    title: "Kontraktor Bangunan",
-    desc: "Construxa",
-    image: "/clients/construxa.jpg",
-    link: "https://www.instagram.com/p/DXf2mnEDULr/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
     title: "Laundry & Dry Cleaning",
@@ -75,10 +153,22 @@ const aboutUsItems = [
     link: "https://www.instagram.com/p/DU4ib1RjkTE/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
-    title: "Portal Berita & Media",
-    desc: "Cronicle",
-    image: "/clients/cronicle.jpg",
-    link: "https://dribbble.com/shots/27329956-Cronicle-News-Portal-Website",
+    title: "Padel RSVP",
+    desc: "Spoty",
+    image: "/clients/spoty.jpg",
+    link: "https://dribbble.com/shots/26254686-Spoty-Padel-Sports-RSVP-Website",
+  },
+  {
+    title: "Perusahaan Energy",
+    desc: "Heliora",
+    image: "/clients/heliora.jpg",
+    link: "https://www.instagram.com/p/DXVqS8elSei/?img_index=1",
+  },
+  {
+    title: "Perusahaan Keuangan",
+    desc: "PayNexa",
+    image: "/clients/paynexa.jpg",
+    link: "https://www.instagram.com/p/DRTefeIAFJH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D",
   },
   {
     title: "Property Real Estate",
@@ -87,15 +177,27 @@ const aboutUsItems = [
     link: "https://dribbble.com/shots/27103569-QUIVA-Real-Estate-Website",
   },
   {
+    title: "Service AC dan Elektronik",
+    desc: "Airelite",
+    image: "/clients/airelite.jpg",
+    link: "https://www.instagram.com/p/DXNxrVHketf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
     title: "Spa & Massage",
     desc: "Lumora",
     image: "/clients/lumora.jpg",
     link: "https://dribbble.com/shots/27329961-Lumora-Spa-Massage-Website",
   },
   {
-    title: "Travel Kendaraan Mobil",
-    desc: "RuteKita",
-    image: "/clients/rutekita.jpg",
+    title: "Sports Club (Padel)",
+    desc: "Courte Club",
+    image: "/clients/courte-club.jpg",
+    link: "https://www.instagram.com/p/DXsyBt9jeHx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+  {
+    title: "Wedding Organizer",
+    desc: "Rosella",
+    image: "/clients/rosella.jpg",
     link: "https://www.instagram.com/p/DXsyBt9jeHx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
 ];
