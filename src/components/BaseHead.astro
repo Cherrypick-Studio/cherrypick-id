@@ -1,0 +1,167 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	canonical: string;
+	ogType?: 'website' | 'article';
+	ogImage?: string;
+	ogImageAlt?: string;
+	noindex?: boolean;
+	article?: {
+		publishedTime: string;
+		modifiedTime?: string;
+	};
+	jsonLd?: object | object[];
+}
+
+const {
+	title,
+	description,
+	canonical,
+	ogType = 'website',
+	ogImage = 'https://id.cherrypick.studio/og-image.jpg',
+	ogImageAlt = 'Cherrypick Studio — Jasa Pembuatan Website Profesional',
+	noindex = false,
+	article,
+	jsonLd,
+} = Astro.props;
+
+const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+---
+
+<script is:inline>
+	const theme = localStorage.getItem('theme') || 'system';
+	const isDark =
+		theme === 'dark' ||
+		(theme === 'system' &&
+			window.matchMedia('(prefers-color-scheme: dark)').matches);
+	if (isDark) document.documentElement.classList.add('dark');
+</script>
+
+<meta charset='UTF-8' />
+<meta name='viewport' content='width=device-width, initial-scale=1' />
+<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+
+<title>{title}</title>
+<meta name='description' content={description} />
+<link rel='canonical' href={canonical} />
+<link rel='alternate' hreflang='id' href={canonical} />
+<link rel='alternate' hreflang='x-default' href={canonical} />
+
+<meta
+	name='google-site-verification'
+	content='qKVanX9wpzHxIonFbfJ19kyUQERD6iQGc_5D7atoVn0'
+/>
+
+<!-- Open Graph -->
+<meta property='og:type' content={ogType} />
+<meta property='og:url' content={canonical} />
+<meta property='og:title' content={title} />
+<meta property='og:description' content={description} />
+<meta property='og:image' content={ogImage} />
+<meta property='og:image:alt' content={ogImageAlt} />
+<meta property='og:image:width' content='1200' />
+<meta property='og:image:height' content='630' />
+<meta property='og:locale' content='id_ID' />
+<meta property='og:site_name' content='Cherrypick Studio' />
+
+{article && (
+	<meta property='article:published_time' content={article.publishedTime} />
+)}
+{article?.modifiedTime && (
+	<meta property='article:modified_time' content={article.modifiedTime} />
+)}
+
+<!-- Twitter Card -->
+<meta name='twitter:card' content='summary_large_image' />
+<meta name='twitter:url' content={canonical} />
+<meta name='twitter:title' content={title} />
+<meta name='twitter:description' content={description} />
+<meta name='twitter:image' content={ogImage} />
+<meta name='twitter:image:alt' content={ogImageAlt} />
+
+<meta name='theme-color' content='#C42026' />
+<meta name='robots' content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+<meta http-equiv='content-language' content='id' />
+<meta name='author' content='Cherrypick Studio' />
+
+<!-- Preconnect -->
+<link rel='preconnect' href='https://www.googletagmanager.com' crossorigin />
+<link rel='preconnect' href='https://connect.facebook.net' crossorigin />
+<link rel='preconnect' href='https://www.facebook.com' crossorigin />
+<link rel='preconnect' href='https://maps.app.goo.gl' crossorigin />
+
+<!-- Google Analytics -->
+<script async src='https://www.googletagmanager.com/gtag/js?id=G-ZZSP9JYL3P'
+></script>
+<script is:inline>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+	gtag('config', 'G-ZZSP9JYL3P');
+</script>
+
+<!-- Meta Pixel -->
+<script is:inline>
+	!(function (f, b, e, v, n, t, s) {
+		if (f.fbq) return;
+		n = f.fbq = function () {
+			n.callMethod
+				? n.callMethod.apply(n, arguments)
+				: n.queue.push(arguments);
+		};
+		if (!f._fbq) f._fbq = n;
+		n.push = n;
+		n.loaded = !0;
+		n.version = '2.0';
+		n.queue = [];
+		t = b.createElement(e);
+		t.async = !0;
+		t.src = v;
+		s = b.getElementsByTagName(e)[0];
+		s.parentNode.insertBefore(t, s);
+	})(
+		window,
+		document,
+		'script',
+		'https://connect.facebook.net/en_US/fbevents.js',
+	);
+	fbq('init', '1993581981585697');
+	fbq('track', 'PageView');
+</script>
+
+<!-- Cloudflare Web Analytics -->
+<script
+	defer
+	src='https://static.cloudflareinsights.com/beacon.min.js'
+	data-cf-beacon='{"token": "7187a12ab3084bbb92ace072d76d9c76"}'></script>
+
+<!-- Scroll Depth Tracking -->
+<script is:inline>
+	(function () {
+		var milestones = [25, 50, 75, 90];
+		var reached = {};
+		function onScroll() {
+			var scrollTop = window.scrollY || document.documentElement.scrollTop;
+			var docHeight =
+				document.documentElement.scrollHeight -
+				document.documentElement.clientHeight;
+			if (docHeight <= 0) return;
+			var pct = Math.round((scrollTop / docHeight) * 100);
+			milestones.forEach(function (m) {
+				if (!reached[m] && pct >= m) {
+					reached[m] = true;
+					if (typeof gtag === 'function')
+						gtag('event', 'scroll_depth', { percent_scrolled: m });
+				}
+			});
+		}
+		window.addEventListener('scroll', onScroll, { passive: true });
+	})();
+</script>
+
+{schemas.map((schema) => (
+	<script type='application/ld+json' is:inline set:html={JSON.stringify(schema)} />
+))}
