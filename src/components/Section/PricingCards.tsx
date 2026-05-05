@@ -33,6 +33,7 @@ const plans: PricingPlan[] = [
 		addOns: [
 			'Tambahan section (+Rp 50.000/section)',
 			'Copywriting profesional (+Rp 100.000)',
+			'Source code ownership (+Rp 600.000/halaman)',
 		],
 		isDiscount: true
 	},
@@ -61,6 +62,7 @@ const plans: PricingPlan[] = [
 			'Tambahan halaman (+Rp 150.000/halaman)',
 			'Copywriting profesional (+Rp 100.000)',
 			'Blog post tambahan (+Rp 50.000/post)',
+			'Source code ownership (+Rp 600.000/halaman)',
 			// 'Maintenance bulanan (+Rp 100.000/bulan)',
 		],
 		isPopular: true,
