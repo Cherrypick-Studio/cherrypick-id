@@ -25,7 +25,7 @@ const plans: PricingPlan[] = [
 			'Desain menggunakan template premium (custom warna & logo)',
 			'4-6 section standar (Hero, Benefit, Testimoni, CTA, Footer)',
 			'WhatsApp integration',
-			'Domain .com atau .id',
+			'Domain .com atau .id (min langganan 4 bulan)',
 			'SSL certificate',
 			'2x revisi minor',
 			'Waktu pengerjaan: 3-7 hari'
@@ -53,7 +53,7 @@ const plans: PricingPlan[] = [
 			'Integrasi social media & WhatsApp Business',
 			'Gallery/portfolio showcase responsif',
 			'Speed optimization basic',
-			'Domain (.com/.id), server, SSL 1 tahun',
+			'Domain (.com/.id), server, SSL 1 tahun (min langganan 4 bulan)',
 			'3x revisi',
 			'1 bulan support teknis',
 			'Waktu pengerjaan: 2-3 minggu'
