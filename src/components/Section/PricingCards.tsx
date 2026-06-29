@@ -82,7 +82,7 @@ const plans: PricingPlan[] = [
 			'Invoice & order management',
 			'Member area login',
 			'Admin dashboard',
-			'Support 6 Bulan',
+			'Support 2 Bulan',
 		],
 		addOns: [
 			'Custom fitur tambahan (harga menyesuaikan)',
